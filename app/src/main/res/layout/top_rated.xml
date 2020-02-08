@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    android:layout_gravity="center_horizontal|center"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="150dp"
+        app:cardCornerRadius="24dp"
+        android:layout_height="210dp">
+        <ImageView
+            android:contentDescription="@string/poster"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/poster"
+            android:scaleType="fitXY"/>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            style="@style/TextColor"
+            android:text="@string/title"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+        <ImageView
+            android:id="@+id/like"
+            android:paddingTop="4dp"
+            android:contentDescription="@string/like"
+            android:tint="@color/colorAccent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/love"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/pg_13"
+                style="@style/TextColor"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/i"
+                style="@style/TextColor"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/movie_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextColor"
+                android:text="@string/_1hr_52min"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

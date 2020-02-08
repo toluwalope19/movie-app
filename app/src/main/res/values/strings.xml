@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Movie-App</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="poster">poster</string>
+    <string name="title">Title</string>
+    <string name="like">like</string>
+    <string name="pg_13">PG-13</string>
+    <string name="_1hr_52min">1hr 52min</string>
+    <string name="i">|</string>
 </resources>
