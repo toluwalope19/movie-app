@@ -15,6 +15,7 @@
             android:contentDescription="@string/poster"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/img_background"
             android:src="@drawable/poster"
             android:scaleType="fitXY"/>
     </androidx.cardview.widget.CardView>
@@ -47,7 +48,7 @@
 
             <TextView
                 android:id="@+id/rating"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/pg_13"
                 style="@style/TextColor"
@@ -65,6 +66,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 style="@style/TextColor"
+                android:paddingStart="@dimen/marginTop"
+                android:paddingEnd="@dimen/marginTop"
                 android:text="@string/_1hr_52min"
                 android:layout_weight="1"/>
         </LinearLayout>

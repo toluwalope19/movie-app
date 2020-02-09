@@ -7,4 +7,9 @@
     <string name="pg_13">PG-13</string>
     <string name="_1hr_52min">1hr 52min</string>
     <string name="i">|</string>
+    <string name="detailImage">detailimage</string>
+    <string name="genre">Action, Documentary</string>
+    <string name="date">24 Oct, 2019</string>
+    <string name="lorem_ipsum_sjbcdjbfd_fdhfu_dfdu_fhudfbudsbfu_wbfuwgfuwfuwbuf_wufuw">lorem ipsum sjbcdjbfd fdhfu dfdu fhudfbudsbfu wbfuwgfuwfuwbuf wufuw</string>
+    <string name="favImage">favImage</string>
 </resources>
