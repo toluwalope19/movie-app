@@ -42,7 +42,7 @@
         android:weightSum="3">
 
         <TextView
-            android:id="@+id/rating"
+            android:id="@+id/vote_average"
             android:textSize="18sp"
             android:paddingTop="8dp"
             android:textStyle="bold"
@@ -58,17 +58,6 @@
             android:layout_height="wrap_content"
             android:text="@string/i"
             style="@style/secondTextColor"
-            android:layout_weight="1"/>
-
-        <TextView
-            android:id="@+id/movie_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/secondTextColor"
-            android:textSize="18sp"
-            android:paddingStart="@dimen/marginTop"
-            android:paddingEnd="@dimen/marginTop"
-            android:text="@string/_1hr_52min"
             android:layout_weight="1"/>
 
 </LinearLayout>
