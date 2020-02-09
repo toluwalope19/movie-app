@@ -9,5 +9,5 @@ import retrofit2.http.Query
 interface MovieApi {
 
     @GET("discover/movie")
-    fun getRepos(@Query("sort_by") filter : String = "popularity.desc"): Deferred<List<Movie>>
+    fun getMovies(@Query("sort_by") filter : String = "popularity.desc"): Deferred<List<Movie>>
 }
