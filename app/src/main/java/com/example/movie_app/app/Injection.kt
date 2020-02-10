@@ -2,7 +2,6 @@ package com.example.movie_app.app
 
 import android.content.Context
 import android.net.ConnectivityManager
-import com.example.movie_app.repository.AllRepository
 import com.example.movie_app.repository.Repository
 import com.example.movie_app.repository.network.MovieApi
 import com.example.movie_app.util.Util
@@ -13,7 +12,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object Injection {
-    fun provideRepository(): AllRepository = Repository
+
 
     private fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()

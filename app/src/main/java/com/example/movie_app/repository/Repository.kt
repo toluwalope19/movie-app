@@ -1,33 +1,33 @@
 package com.example.movie_app.repository
 
-import androidx.lifecycle.LiveData
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.movie_app.app.Injection
+import com.example.movie_app.model.GetMoviesResponse
 import com.example.movie_app.model.Movie
 import kotlinx.coroutines.*
 
 
-object Repository : AllRepository {
+object Repository {
 
     private val api = Injection.provideMovieApi()
-    override fun getMovies(): LiveData<List<Movie>> {
 
-        val liveData = MutableLiveData<List<Movie>>()
-        val status = MutableLiveData<String>()
 
-        suspend fun getMovies() {
+
+
+        suspend fun getMovies():MutableLiveData<List<Movie>> {
+            val data = MutableLiveData<List<Movie>>()
             withContext(Dispatchers.IO) {
-
-                val getMovies = api.getMovies()
                 try {
+                    val getMovies = api.getMoviesAsync()
                     val listResult = getMovies.await()
-                    liveData.value = listResult
+                    data.value = listResult.movies
                 } catch (t: Throwable) {
-                    status.value = "Failure: ${t.message}"
+                    data.value = null
+                    Log.e("Repository", t.message!!)
                 }
             }
-
+            return data
         }
-        return liveData
     }
-}
+
