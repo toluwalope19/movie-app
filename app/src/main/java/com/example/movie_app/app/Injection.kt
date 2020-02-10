@@ -1,5 +1,7 @@
 package com.example.movie_app.app
 
+import android.content.Context
+import android.net.ConnectivityManager
 import com.example.movie_app.repository.AllRepository
 import com.example.movie_app.repository.Repository
 import com.example.movie_app.repository.network.MovieApi
@@ -27,5 +29,21 @@ object Injection {
 
     fun provideMovieApi(): MovieApi {
         return provideRetrofit().create(MovieApi::class.java)
+    }
+
+    fun isNetworkAvailable(context: Context): Boolean? {
+
+        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetwork = cm.activeNetworkInfo
+        if (activeNetwork != null) {
+            if (activeNetwork.type == ConnectivityManager.TYPE_WIFI) {
+                return true
+            } else if (activeNetwork.type == ConnectivityManager.TYPE_MOBILE) {
+                return true
+            }
+        } else {
+            return false
+        }
+        return false
     }
 }
