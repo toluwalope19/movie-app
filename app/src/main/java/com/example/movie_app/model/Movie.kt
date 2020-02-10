@@ -4,14 +4,16 @@ import com.google.gson.annotations.SerializedName
 
 data class Movie (
         @SerializedName("title")
-        val title : List<Int>,
+        var title : String,
         @SerializedName("genre_ids")
-        val genre: Int,
+        var genre: List<Int>,
         @SerializedName("poster_path")
-        val thumbnail: String,
+        var thumbnail: String,
         @SerializedName("release_date")
-        val releaseDate: String,
+        var releaseDate: String,
         @SerializedName("overview")
-        val overview: String,
-        val isLiked: Boolean
+        var overview: String,
+        @SerializedName("vote_average")
+        var voteAverage: Double
+
 )

@@ -15,15 +15,15 @@ object Repository {
 
 
 
-        suspend fun getMovies():MutableLiveData<List<Movie>> {
-            val data = MutableLiveData<List<Movie>>()
+        suspend fun getMovies():List<Movie>? {
+            var data : List<Movie>? = null
             withContext(Dispatchers.IO) {
                 try {
                     val getMovies = api.getMoviesAsync()
                     val listResult = getMovies.await()
-                    data.value = listResult.movies
+                    data= listResult.movies
                 } catch (t: Throwable) {
-                    data.value = null
+                    data = null
                     Log.e("Repository", t.message!!)
                 }
             }

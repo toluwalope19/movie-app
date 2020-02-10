@@ -1,43 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
-    style="@style/TextColor"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.MoviesFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
- <LinearLayout
+ <data>
+  <variable
+      name="movies"
+      type="com.example.movie_app.model.Movie" />
+
+ </data>
+
+ <RelativeLayout
      android:layout_width="match_parent"
-     android:orientation="vertical"
-     android:paddingTop="@dimen/marginTop"
-     android:layout_height="match_parent">
+     android:layout_height="match_parent"
+     android:background="@color/colorPrimaryDark"
+     style="@style/TextColor"
+     tools:context=".ui.MoviesFragment">
 
-  <TextView
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:orientation="vertical"
+      android:paddingTop="@dimen/marginTop"
+      android:layout_height="match_parent">
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:paddingStart="@dimen/marginTop"
+       android:paddingEnd="@dimen/marginTop"
+       style="@style/TextColor"
+       android:text="@string/top_rated"
+       android:textSize="24sp" />
+
+   <androidx.recyclerview.widget.RecyclerView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/topRated_recyclerView" />
+
+   <ProgressBar
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:id="@+id/progressBar" />
+
+  </LinearLayout>
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:paddingStart="@dimen/marginTop"
-      android:paddingEnd="@dimen/marginTop"
-      style="@style/TextColor"
-      android:text="@string/top_rated"
-      android:textSize="24sp"/>
+      android:src="@drawable/love"
+      android:id="@+id/fab"
+      android:layout_gravity="bottom|end"
+      android:layout_alignParentBottom="true"
+      android:layout_margin="8dp"
+      android:layout_alignParentEnd="true" />
 
-  <androidx.recyclerview.widget.RecyclerView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/topRated_recyclerView"/>
-
- </LinearLayout>
-
- <com.google.android.material.floatingactionbutton.FloatingActionButton
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:src="@drawable/love"
-     android:id="@+id/fab"
-     android:layout_gravity="bottom|end"
-     android:layout_alignParentBottom="true"
-     android:layout_margin="8dp"
-     android:layout_alignParentEnd="true"/>
-
-</RelativeLayout>
+ </RelativeLayout>
+</layout>
