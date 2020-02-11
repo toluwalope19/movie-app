@@ -28,6 +28,7 @@ class MoviesViewModel : ViewModel() {
          viewModelScope.launch {
           _allMovies.value =  repository.getMovies()
              Log.i("Hello", repository.getMovies().toString())
+
             }
         }
 

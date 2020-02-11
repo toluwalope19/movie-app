@@ -6,6 +6,7 @@ import android.view.View;
 import androidx.databinding.DataBinderMapper;
 import androidx.databinding.DataBindingComponent;
 import androidx.databinding.ViewDataBinding;
+import com.example.movie_app.databinding.MovieDetailsFragmentBindingImpl;
 import com.example.movie_app.databinding.MoviesFragmentBindingImpl;
 import com.example.movie_app.databinding.TopRatedBindingImpl;
 import java.lang.IllegalArgumentException;
@@ -19,13 +20,16 @@ import java.util.HashMap;
 import java.util.List;
 
 public class DataBinderMapperImpl extends DataBinderMapper {
-  private static final int LAYOUT_MOVIESFRAGMENT = 1;
+  private static final int LAYOUT_MOVIEDETAILSFRAGMENT = 1;
 
-  private static final int LAYOUT_TOPRATED = 2;
+  private static final int LAYOUT_MOVIESFRAGMENT = 2;
 
-  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(2);
+  private static final int LAYOUT_TOPRATED = 3;
+
+  private static final SparseIntArray INTERNAL_LAYOUT_ID_LOOKUP = new SparseIntArray(3);
 
   static {
+    INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.movie_app.R.layout.movie_details_fragment, LAYOUT_MOVIEDETAILSFRAGMENT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.movie_app.R.layout.movies_fragment, LAYOUT_MOVIESFRAGMENT);
     INTERNAL_LAYOUT_ID_LOOKUP.put(com.example.movie_app.R.layout.top_rated, LAYOUT_TOPRATED);
   }
@@ -39,6 +43,12 @@ public class DataBinderMapperImpl extends DataBinderMapper {
         throw new RuntimeException("view must have a tag");
       }
       switch(localizedLayoutId) {
+        case  LAYOUT_MOVIEDETAILSFRAGMENT: {
+          if ("layout/movie_details_fragment_0".equals(tag)) {
+            return new MovieDetailsFragmentBindingImpl(component, view);
+          }
+          throw new IllegalArgumentException("The tag for movie_details_fragment is invalid. Received: " + tag);
+        }
         case  LAYOUT_MOVIESFRAGMENT: {
           if ("layout/movies_fragment_0".equals(tag)) {
             return new MoviesFragmentBindingImpl(component, view);
@@ -106,9 +116,10 @@ public class DataBinderMapperImpl extends DataBinderMapper {
   }
 
   private static class InnerLayoutIdLookup {
-    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(2);
+    static final HashMap<String, Integer> sKeys = new HashMap<String, Integer>(3);
 
     static {
+      sKeys.put("layout/movie_details_fragment_0", com.example.movie_app.R.layout.movie_details_fragment);
       sKeys.put("layout/movies_fragment_0", com.example.movie_app.R.layout.movies_fragment);
       sKeys.put("layout/top_rated_0", com.example.movie_app.R.layout.top_rated);
     }

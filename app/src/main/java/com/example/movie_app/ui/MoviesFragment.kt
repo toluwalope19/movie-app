@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.GridLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.movie_app.viewmodel.MoviesViewModel
 import com.example.movie_app.R
@@ -38,6 +39,8 @@ class MoviesFragment : Fragment() {
         adapter = MoviesAdapter(object: OnItemClickListener {
             override fun onClickAction(movie: Movie) {
 
+                val action = MoviesFragmentDirections.actionMoviesFragmentToMovieDetailsFragment(movie)
+                findNavController(this@MoviesFragment).navigate(action)
             }
 
         },context!!)

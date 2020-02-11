@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\movie_details_fragment.xml",
+        "source": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\src\\main\\res\\layout\\movie_details_fragment.xml"
+    },
+    {
         "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\top_rated.xml",
         "source": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\src\\main\\res\\layout\\top_rated.xml"
     },

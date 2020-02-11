@@ -19,6 +19,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="150dp"
             app:cardCornerRadius="24dp"
+            android:layout_gravity="center_horizontal"
             android:layout_height="210dp">
 
             <ImageView
@@ -38,20 +39,23 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="4dp"
                 style="@style/TextColor"
+                android:layout_gravity="end"
                 android:tag="binding_2"      
                 android:textStyle="bold"
                 tools:text="@string/title"
-                android:textSize="16sp" />
+                android:textSize="12sp" />
+
 
             <ImageView
                 android:id="@+id/like"
                 android:paddingTop="4dp"
                 android:contentDescription="@string/like"
                 android:tint="@color/colorAccent"
+                android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/love" />
@@ -67,11 +71,10 @@
                     android:id="@+id/rating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:layout_gravity="center"
+                    android:tag="binding_3"                             
+                    android:layout_gravity="center_horizontal"
                     android:gravity="center"
                     tools:text="5.7"
-                    android:drawableStart="@drawable/ic_star_black_24dp"
                     style="@style/TextColor"
                     android:layout_weight="1" />
 
@@ -88,9 +91,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     style="@style/TextColor"
+                    android:layout_gravity="center_horizontal"
                     android:paddingStart="@dimen/marginTop"
                     android:paddingEnd="@dimen/marginTop"
-                    android:tag="binding_3"            
+                    android:tag="binding_4"            
                     android:layout_weight="1" />
             </LinearLayout>
 

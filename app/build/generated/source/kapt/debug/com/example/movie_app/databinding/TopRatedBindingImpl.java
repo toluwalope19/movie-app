@@ -14,8 +14,7 @@ public class TopRatedBindingImpl extends TopRatedBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.like, 4);
-        sViewsWithIds.put(R.id.rating, 5);
+        sViewsWithIds.put(R.id.like, 5);
         sViewsWithIds.put(R.id.divider, 6);
     }
     // views
@@ -34,16 +33,17 @@ public class TopRatedBindingImpl extends TopRatedBinding  {
     private TopRatedBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
             , (android.widget.TextView) bindings[6]
-            , (android.widget.ImageView) bindings[4]
+            , (android.widget.ImageView) bindings[5]
             , (android.widget.ImageView) bindings[1]
-            , (android.widget.TextView) bindings[5]
             , (android.widget.TextView) bindings[3]
+            , (android.widget.TextView) bindings[4]
             );
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];
         this.mboundView0.setTag(null);
         this.mboundView2 = (android.widget.TextView) bindings[2];
         this.mboundView2.setTag(null);
         this.moviePoster.setTag(null);
+        this.rating.setTag(null);
         this.releaseDate.setTag(null);
         setRootTag(root);
         // listeners
@@ -103,10 +103,12 @@ public class TopRatedBindingImpl extends TopRatedBinding  {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        com.example.movie_app.model.Movie movie = mMovie;
+        java.lang.String doubleToStringMovieVoteAverage = null;
         java.lang.String movieTitle = null;
         java.lang.String movieReleaseDate = null;
         java.lang.String movieThumbnail = null;
+        com.example.movie_app.model.Movie movie = mMovie;
+        double movieVoteAverage = 0.0;
 
         if ((dirtyFlags & 0x3L) != 0) {
 
@@ -119,7 +121,13 @@ public class TopRatedBindingImpl extends TopRatedBinding  {
                     movieReleaseDate = movie.getReleaseDate();
                     // read movie.thumbnail
                     movieThumbnail = movie.getThumbnail();
+                    // read movie.voteAverage
+                    movieVoteAverage = movie.getVoteAverage();
                 }
+
+
+                // read Double.toString(movie.voteAverage)
+                doubleToStringMovieVoteAverage = java.lang.Double.toString(movieVoteAverage);
         }
         // batch finished
         if ((dirtyFlags & 0x3L) != 0) {
@@ -127,6 +135,7 @@ public class TopRatedBindingImpl extends TopRatedBinding  {
 
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView2, movieTitle);
             androidx.databinding.adapters.ImageViewBindingAdapter.setImageUri(this.moviePoster, movieThumbnail);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.rating, doubleToStringMovieVoteAverage);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.releaseDate, movieReleaseDate);
         }
     }
