@@ -1,5 +1,6 @@
 package com.example.movie_app.ui
 
+import android.app.Application
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import android.widget.GridLayout
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.movie_app.viewmodel.MoviesViewModel
 import com.example.movie_app.R
@@ -17,6 +19,7 @@ import com.example.movie_app.databinding.MoviesFragmentBinding
 import com.example.movie_app.model.Movie
 import com.example.movie_app.ui.adapters.MoviesAdapter
 import com.example.movie_app.util.OnItemClickListener
+import com.example.movie_app.viewmodel.FavouritesViewModel
 
 
 class MoviesFragment : Fragment() {
@@ -27,6 +30,7 @@ class MoviesFragment : Fragment() {
 
      lateinit var viewModel: MoviesViewModel
     lateinit var adapter: MoviesAdapter
+    lateinit var favModel: FavouritesViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +40,9 @@ class MoviesFragment : Fragment() {
 
          viewModel = ViewModelProvider(this).get(MoviesViewModel::class.java)
 
+
+        favModel = ViewModelProvider(this).get(FavouritesViewModel::class.java)
+
         adapter = MoviesAdapter(object: OnItemClickListener {
             override fun onClickAction(movie: Movie) {
 
@@ -43,7 +50,7 @@ class MoviesFragment : Fragment() {
                 findNavController(this@MoviesFragment).navigate(action)
             }
 
-        },context!!)
+        },context!!,favModel.apply {  })
         binding.topRatedRecyclerView.adapter = adapter
         binding.topRatedRecyclerView.layoutManager = GridLayoutManager(context,2)
 
@@ -53,11 +60,18 @@ class MoviesFragment : Fragment() {
             adapter.notifyDataSetChanged()
         })
 
+        binding.fab.setOnClickListener {
+            val action = MoviesFragmentDirections.actionMoviesFragmentToFavouritesFragment()
+            findNavController().navigate(action)
+        }
+
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+
 
 
     }

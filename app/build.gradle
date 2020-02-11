@@ -9,7 +9,6 @@ apply plugin: "androidx.navigation.safeargs.kotlin"
 apply plugin: 'kotlin-kapt'
 
 
-
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -76,8 +75,9 @@ dependencies {
     // Glide for images
     implementation "com.github.bumptech.glide:glide:4.10.0"
 
+
     // Room database
     implementation "androidx.room:room-runtime:2.2.3"
-    annotationProcessor "androidx.room:room-compiler:2.2.3"
+    kapt "androidx.room:room-compiler:2.2.3"
     implementation "androidx.room:room-ktx:2.2.3"
 }

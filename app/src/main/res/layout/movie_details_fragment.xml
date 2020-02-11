@@ -77,15 +77,15 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/genre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/secondTextColor"
-            android:paddingTop="8dp"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:text="@{movie.genre.toString()}" />
+<!--        <TextView-->
+<!--            android:id="@+id/genre"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            style="@style/secondTextColor"-->
+<!--            android:paddingTop="8dp"-->
+<!--            android:textSize="18sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:text="@{movie.genre.toString()}" />-->
 
         <TextView
             android:id="@+id/release_date"

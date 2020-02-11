@@ -32,11 +32,34 @@ class FavouritesFragmentDirections private constructor() {
     }
   }
 
+  private data class ActionFavouritesFragmentToFavouriteDetailFragment(
+    val movie: Movie
+  ) : NavDirections {
+    override fun getActionId(): Int = R.id.action_favouritesFragment_to_favouriteDetailFragment
+
+    @Suppress("CAST_NEVER_SUCCEEDS")
+    override fun getArguments(): Bundle {
+      val result = Bundle()
+      if (Parcelable::class.java.isAssignableFrom(Movie::class.java)) {
+        result.putParcelable("movie", this.movie as Parcelable)
+      } else if (Serializable::class.java.isAssignableFrom(Movie::class.java)) {
+        result.putSerializable("movie", this.movie as Serializable)
+      } else {
+        throw UnsupportedOperationException(Movie::class.java.name +
+            " must implement Parcelable or Serializable or must be an Enum.")
+      }
+      return result
+    }
+  }
+
   companion object {
     fun actionFavouritesFragmentToMoviesFragment(): NavDirections =
         ActionOnlyNavDirections(R.id.action_favouritesFragment_to_moviesFragment)
 
     fun actionFavouritesFragmentToMovieDetailsFragment(movie: Movie): NavDirections =
         ActionFavouritesFragmentToMovieDetailsFragment(movie)
+
+    fun actionFavouritesFragmentToFavouriteDetailFragment(movie: Movie): NavDirections =
+        ActionFavouritesFragmentToFavouriteDetailFragment(movie)
   }
 }

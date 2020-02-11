@@ -4,9 +4,13 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 import com.example.movie_app.model.FavouriteMovie
+import com.example.movie_app.model.Movie
+import com.example.movie_app.util.ListIntTypeConverters
 
-@Database(entities = [FavouriteMovie::class], version = 1)
+@Database(entities = [Movie::class], version = 1)
+@TypeConverters(ListIntTypeConverters::class)
 abstract class MovieDB :RoomDatabase(){
 
     abstract fun MovieDao(): MovieDao
@@ -16,7 +20,7 @@ abstract class MovieDB :RoomDatabase(){
         private var instance: MovieDB? = null
         fun getDatabase( context: Context): MovieDB {
             if(instance == null){
-                instance = Room.databaseBuilder(context.applicationContext,
+                instance = Room.databaseBuilder(context,
                     MovieDB::class.java,"Data").build()
                 return instance!!
 

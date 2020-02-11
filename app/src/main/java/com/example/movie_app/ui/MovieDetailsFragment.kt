@@ -25,7 +25,7 @@ class MovieDetailsFragment() : Fragment() {
 
 
 //    val args: PostDetailFragmentArgs by navArgs()
-    val args: MovieDetailsFragmentArgs by navArgs()
+    private val args: MovieDetailsFragmentArgs by navArgs()
 
 
     override fun onCreateView(
@@ -37,7 +37,7 @@ class MovieDetailsFragment() : Fragment() {
 
         binding.movie = args.movie
         val image =  args.movie.thumbnail
-        Glide.with(context!!).load(Util.IMAGE_BASE_URL+"w154"+ image).into(binding.detailImage)
+        Glide.with(context!!).load(Util.IMAGE_BASE_URL+"original"+ image).into(binding.detailImage)
 
 
         return binding.root

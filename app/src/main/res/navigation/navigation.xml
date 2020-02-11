@@ -40,5 +40,16 @@
         <action
             android:id="@+id/action_favouritesFragment_to_movieDetailsFragment"
             app:destination="@id/movieDetailsFragment" />
+        <action
+            android:id="@+id/action_favouritesFragment_to_favouriteDetailFragment"
+            app:destination="@id/favouriteDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favouriteDetailFragment"
+        android:name="com.example.movie_app.ui.FavouriteDetailFragment"
+        android:label="FavouriteDetailFragment" >
+        <argument
+            android:name="movie"
+            app:argType="com.example.movie_app.model.Movie" />
     </fragment>
 </navigation>

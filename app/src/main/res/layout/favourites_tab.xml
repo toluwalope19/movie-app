@@ -1,53 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="@drawable/img_background"
-    android:layout_width="match_parent"
-    android:layout_height="150dp">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-       <ImageView
-           android:contentDescription="@string/favImage"
-           android:layout_width="match_parent"
-           android:layout_height="match_parent"
-           android:src="@drawable/poster"
-           android:scaleX="5"/>
-    <TextView
-        android:id="@+id/fav_title"
-        app:layout_constraintBottom_toTopOf="@id/fav_date"
-        app:layout_constraintStart_toStartOf="parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="movie"
+            type="com.example.movie_app.model.Movie" />
+        <variable
+            name="favMovie"
+            type="com.example.movie_app.viewmodel.FavouritesViewModel" />
+    </data>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:text="@string/title"
-        style="@style/TextColor"
-        android:textStyle="bold"
-        android:textSize="34sp"/>
-        <TextView
-            android:id="@+id/fav_date"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="vertical"
+        android:background="@color/colorPrimaryDark"
+        android:layout_gravity="center_horizontal|center">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            app:cardCornerRadius="24dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="210dp">
+
+            <ImageView
+                android:id="@+id/movie_poster"
+                android:contentDescription="@string/poster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/img_background"
+                android:src="@{movie.thumbnail}"
+                tools:src="@drawable/poster"
+                android:scaleType="fitXY" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:paddingStart="16dp"
-            android:paddingBottom="8dp"
             android:layout_height="wrap_content"
-            android:text="@string/date"
-            style="@style/TextColor"
-            android:textSize="24sp"/>
+            android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:paddingBottom="8dp"
-            android:src="@drawable/love_fill"
-            android:tint="@color/colorAccent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                style="@style/TextColor"
+                android:layout_gravity="end"
+                android:text="@{movie.title}"
+                android:textStyle="bold"
+                tools:text="@string/title"
+                android:textSize="12sp" />
 
 
-</LinearLayout>
+            <ImageView
+                android:id="@+id/Fav_like"
+                android:paddingTop="4dp"
+                android:contentDescription="@string/like"
+                android:tint="@color/colorAccent"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/love_fill" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{Double.toString(movie.voteAverage)}"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center"
+                    tools:text="5.7"
+                    style="@style/TextColor"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/divider"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/i"
+                    style="@style/TextColor"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/release_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/TextColor"
+                    android:layout_gravity="center_horizontal"
+                    android:paddingStart="@dimen/marginTop"
+                    android:paddingEnd="@dimen/marginTop"
+                    android:text="@{movie.releaseDate}"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

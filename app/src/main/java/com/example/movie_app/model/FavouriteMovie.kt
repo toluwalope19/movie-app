@@ -7,17 +7,19 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
-@Entity(tableName = "movieTable")
+
 @Parcelize
-data class FavouriteMovie (@PrimaryKey(autoGenerate = true)
+data class FavouriteMovie (
    @ColumnInfo(name = "id")
    var id: Int = 0,
    @ColumnInfo(name="title")
     val title : String,
-   @ColumnInfo(name="genre")
-    val genre: List<Int>,
+//   @ColumnInfo(name="genre")
+//    val genre: List<Int>,
    @ColumnInfo(name="thumbnail")
     val thumbnail: String,
+    @ColumnInfo(name="rating")
+    val voteAverage: Double,
    @ColumnInfo(name = "releaseDate")
     val releaseDate: String,
    @ColumnInfo(name="overview")
