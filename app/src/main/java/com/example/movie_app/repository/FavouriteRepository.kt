@@ -29,11 +29,20 @@ class FavouriteRepository(application: Application) : CoroutineScope {
     fun insertFavourite(movie: Movie){
         launch { insertFavouriteBackGround(movie) }
     }
+    fun deleteFavourite(movie: Movie){
+        launch { deleteFavouriteBackGround(movie) }
+    }
 
 
     private suspend fun insertFavouriteBackGround(movie: Movie){
         withContext(Dispatchers.IO){
             movieDao.insertFavourite(movie)
+        }
+    }
+
+    private suspend fun deleteFavouriteBackGround(movie: Movie){
+        withContext(Dispatchers.IO){
+            movieDao.removeFavourite(movie)
         }
     }
 }

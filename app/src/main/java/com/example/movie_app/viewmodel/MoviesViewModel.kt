@@ -1,13 +1,15 @@
 package com.example.movie_app.viewmodel
 
-import android.app.Application
 import android.util.Log
-import androidx.lifecycle.*
-import com.example.movie_app.app.Injection
-import com.example.movie_app.model.GetMoviesResponse
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.example.movie_app.model.Movie
 import com.example.movie_app.repository.Repository
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+
 
 class MoviesViewModel : ViewModel() {
     private val repository = Repository
@@ -16,10 +18,17 @@ class MoviesViewModel : ViewModel() {
 
     private val viewModelScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
+    val isLike = MutableLiveData<Boolean>()
+
     private var _allMovies = MutableLiveData<List<Movie>>()
         val allMovies
             get() =_allMovies
 
+     private fun likeMovie(){
+         isLike.value = true
+
+
+     }
 
     /**
      * init{} is called immediately when this ViewModel is created.
@@ -28,7 +37,6 @@ class MoviesViewModel : ViewModel() {
          viewModelScope.launch {
           _allMovies.value =  repository.getMovies()
              Log.i("Hello", repository.getMovies().toString())
-
             }
         }
 

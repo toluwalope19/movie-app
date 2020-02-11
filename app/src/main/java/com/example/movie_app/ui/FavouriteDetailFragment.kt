@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
-import com.example.movie_app.FavouriteDetailFragmentArgs
+
 import com.example.movie_app.viewmodel.FavouriteDetailViewModel
 import com.example.movie_app.databinding.FavouriteDetailFragmentBinding
 

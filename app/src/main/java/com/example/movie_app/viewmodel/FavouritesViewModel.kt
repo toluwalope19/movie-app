@@ -17,6 +17,10 @@ class FavouritesViewModel(application: Application) : AndroidViewModel(applicati
 
        fun addFavourites(movie: Movie) {repository.insertFavourite(movie)}
 
+        fun removeFavourite(movie: Movie){
+            repository.deleteFavourite(movie)
+        }
+
 
 //        class Factory(val app: Application) : ViewModelProvider.Factory {
 //        override fun <T : ViewModel?> create(modelClass: Class<T>): T {

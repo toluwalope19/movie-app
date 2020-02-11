@@ -34,7 +34,11 @@ data class Movie (@PrimaryKey(autoGenerate = true)
 
         @SerializedName("overview")
           @ColumnInfo(name="overview")
-        var overview: String
+        var overview: String,
+
+        @Transient
+        @ColumnInfo(name = "favourite")
+        var isFavourite: Boolean
 
 
 

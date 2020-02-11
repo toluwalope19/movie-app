@@ -47,11 +47,28 @@ class MoviesAdapter(private val onItemClickListener: OnItemClickListener,private
             .apply(requestOptions)
             .transform(RoundedCorners(30))
             .into(holder.binding.moviePoster)
-        holder.binding.like.setOnClickListener {
-            holder.binding.like.setImageResource(R.drawable.love_fill)
-                    model.addFavourites(movie)
 
-                    Snackbar.make(it,"Movie Added to Favourites",Snackbar.LENGTH_LONG).show()
+        if(!movie.isFavourite){
+            holder.binding.like.setImageResource(R.drawable.love)
+        }
+        else{
+            holder.binding.like.setImageResource(R.drawable.love_fill)
+        }
+        holder.binding.like.setOnClickListener {
+            if(!movie.isFavourite){
+                movie.isFavourite = true
+                holder.binding.like.setImageResource(R.drawable.love_fill)
+                model.addFavourites(movie)
+                Snackbar.make(it,"Movie Added to Favourites",Snackbar.LENGTH_LONG).show()
+            }else{
+                movie.isFavourite=false
+                holder.binding.like.setImageResource(R.drawable.love)
+                model.removeFavourite(movie)
+                Snackbar.make(it,"Movie Removed from Favourites",Snackbar.LENGTH_LONG).show()
+            }
+
+
+
             }
            //  model.addFavourites(favMovie)
 

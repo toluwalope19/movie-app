@@ -1,10 +1,7 @@
 package com.example.movie_app.model.database
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.movie_app.model.FavouriteMovie
 import com.example.movie_app.model.Movie
 
@@ -16,4 +13,7 @@ interface MovieDao {
 
     @Query("SELECT * from movieTable ORDER BY id ASC")
     fun getFavourites() : LiveData<List<Movie>>
+
+    @Delete
+    fun removeFavourite(movie: Movie)
 }
