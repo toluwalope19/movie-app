@@ -13,8 +13,12 @@ import com.example.movie_app.databinding.FavouritesTabBinding
 import com.example.movie_app.model.Movie
 import com.example.movie_app.util.OnFavouritClickListener
 import com.example.movie_app.util.Util
+import com.example.movie_app.viewmodel.FavouritesViewModel
+import com.google.android.material.snackbar.Snackbar
 
-class FavouriteAdapter(private val onFavouritClickListener: OnFavouritClickListener,private val context: Context) : RecyclerView.Adapter<FavouriteAdapter.FavouriteHolder>() {
+class FavouriteAdapter(private val onFavouritClickListener: OnFavouritClickListener,
+                       private val context: Context,
+                       val model: FavouritesViewModel ) : RecyclerView.Adapter<FavouriteAdapter.FavouriteHolder>() {
 
 
     var favMovies: List<Movie> =  listOf()
@@ -37,10 +41,15 @@ class FavouriteAdapter(private val onFavouritClickListener: OnFavouritClickListe
         val image = movie.thumbnail
         val requestOptions = RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL)
         Glide.with(context)
-            .load(Util.IMAGE_BASE_URL + "original" + movie.thumbnail)
+            .load(Uri.parse(Util.IMAGE_BASE_URL + "original" + movie.thumbnail))
             .apply(requestOptions)
             .transform(RoundedCorners(30)).into(holder.binding.moviePoster)
         holder.bind(movie,onFavouritClickListener)
+        holder.binding.unlike.setOnClickListener {
+            model.removeFavourite(movie)
+            Snackbar.make(it, "Movie Removed From Favourites", Snackbar.LENGTH_LONG).show()
+            notifyItemChanged(movie.id.toInt())
+        }
     }
 
     class FavouriteHolder(var binding: FavouritesTabBinding): RecyclerView.ViewHolder(binding.root) {

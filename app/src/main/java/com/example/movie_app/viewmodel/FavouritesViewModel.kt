@@ -2,6 +2,7 @@ package com.example.movie_app.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.movie_app.model.FavouriteMovie
@@ -12,6 +13,8 @@ import com.example.movie_app.repository.Repository
 class FavouritesViewModel(application: Application) : AndroidViewModel(application) {
 
     private var repository = FavouriteRepository(application)
+
+
 
       fun getMessages() = repository.getFavouriteMessages()
 

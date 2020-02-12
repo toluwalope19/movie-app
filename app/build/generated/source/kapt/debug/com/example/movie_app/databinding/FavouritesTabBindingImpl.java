@@ -14,35 +14,37 @@ public class FavouritesTabBindingImpl extends FavouritesTabBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.unlike, 5);
-        sViewsWithIds.put(R.id.divider, 6);
+        sViewsWithIds.put(R.id.movie_poster, 4);
+        sViewsWithIds.put(R.id.like, 5);
+        sViewsWithIds.put(R.id.unlike, 6);
+        sViewsWithIds.put(R.id.divider, 7);
     }
     // views
     @NonNull
     private final android.widget.LinearLayout mboundView0;
     @NonNull
-    private final android.widget.TextView mboundView2;
+    private final android.widget.TextView mboundView1;
     // variables
     // values
     // listeners
     // Inverse Binding Event Handlers
 
     public FavouritesTabBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
     }
     private FavouritesTabBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.TextView) bindings[6]
-            , (android.widget.ImageView) bindings[1]
-            , (android.widget.TextView) bindings[3]
-            , (android.widget.TextView) bindings[4]
+            , (android.widget.TextView) bindings[7]
             , (android.widget.ImageView) bindings[5]
+            , (android.widget.ImageView) bindings[4]
+            , (android.widget.TextView) bindings[2]
+            , (android.widget.TextView) bindings[3]
+            , (android.widget.ImageView) bindings[6]
             );
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];
         this.mboundView0.setTag(null);
-        this.mboundView2 = (android.widget.TextView) bindings[2];
-        this.mboundView2.setTag(null);
-        this.moviePoster.setTag(null);
+        this.mboundView1 = (android.widget.TextView) bindings[1];
+        this.mboundView1.setTag(null);
         this.rating.setTag(null);
         this.releaseDate.setTag(null);
         setRootTag(root);
@@ -112,7 +114,6 @@ public class FavouritesTabBindingImpl extends FavouritesTabBinding  {
         java.lang.String doubleToStringMovieVoteAverage = null;
         java.lang.String movieTitle = null;
         java.lang.String movieReleaseDate = null;
-        java.lang.String movieThumbnail = null;
         com.example.movie_app.model.Movie movie = mMovie;
         double movieVoteAverage = 0.0;
 
@@ -125,8 +126,6 @@ public class FavouritesTabBindingImpl extends FavouritesTabBinding  {
                     movieTitle = movie.getTitle();
                     // read movie.releaseDate
                     movieReleaseDate = movie.getReleaseDate();
-                    // read movie.thumbnail
-                    movieThumbnail = movie.getThumbnail();
                     // read movie.voteAverage
                     movieVoteAverage = movie.getVoteAverage();
                 }
@@ -139,8 +138,7 @@ public class FavouritesTabBindingImpl extends FavouritesTabBinding  {
         if ((dirtyFlags & 0x6L) != 0) {
             // api target 1
 
-            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView2, movieTitle);
-            androidx.databinding.adapters.ImageViewBindingAdapter.setImageUri(this.moviePoster, movieThumbnail);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView1, movieTitle);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.rating, doubleToStringMovieVoteAverage);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.releaseDate, movieReleaseDate);
         }

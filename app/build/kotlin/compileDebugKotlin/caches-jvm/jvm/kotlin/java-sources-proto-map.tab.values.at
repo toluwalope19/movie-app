@@ -1,4 +1,73 @@
-_AppCompat_DropDownItem_Spinner
+Dialog
+-Base_Theme_MaterialComponents_DialogWhenLarge
+*Base_Theme_MaterialComponents_Dialog_Alert
+.Base_Theme_MaterialComponents_Dialog_FixedSize
+-Base_Theme_MaterialComponents_Dialog_MinWidth
+#Base_Theme_MaterialComponents_Light
+*Base_Theme_MaterialComponents_Light_Bridge
+1Base_Theme_MaterialComponents_Light_DarkActionBar
+8Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge
+*Base_Theme_MaterialComponents_Light_Dialog
+3Base_Theme_MaterialComponents_Light_DialogWhenLarge
+0Base_Theme_MaterialComponents_Light_Dialog_Alert
+4Base_Theme_MaterialComponents_Light_Dialog_FixedSize
+3Base_Theme_MaterialComponents_Light_Dialog_MinWidth
+/Base_V14_ThemeOverlay_MaterialComponents_Dialog
+5Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert
+!Base_V14_Theme_MaterialComponents
+(Base_V14_Theme_MaterialComponents_Bridge
+(Base_V14_Theme_MaterialComponents_Dialog
+'Base_V14_Theme_MaterialComponents_Light
+.Base_V14_Theme_MaterialComponents_Light_Bridge
+<Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge
+.Base_V14_Theme_MaterialComponents_Light_Dialog
+&Base_V21_ThemeOverlay_AppCompat_Dialog
+Base_V21_Theme_AppCompat
+Base_V21_Theme_AppCompat_Dialog
+Base_V21_Theme_AppCompat_Light
+%Base_V21_Theme_AppCompat_Light_Dialog
+Base_V22_Theme_AppCompat
+Base_V22_Theme_AppCompat_Light
+Base_V23_Theme_AppCompat
+Base_V23_Theme_AppCompat_Light
+Base_V26_Theme_AppCompat
+Base_V26_Theme_AppCompat_Light
+!Base_V26_Widget_AppCompat_Toolbar
+Base_V28_Theme_AppCompat
+Base_V28_Theme_AppCompat_Light
+%Base_V7_ThemeOverlay_AppCompat_Dialog
+Base_V7_Theme_AppCompat
+Base_V7_Theme_AppCompat_Dialog
+Base_V7_Theme_AppCompat_Light
+$Base_V7_Theme_AppCompat_Light_Dialog
+-Base_V7_Widget_AppCompat_AutoCompleteTextView
+!Base_V7_Widget_AppCompat_EditText
+ Base_V7_Widget_AppCompat_Toolbar
+Base_Widget_AppCompat_ActionBar
+%Base_Widget_AppCompat_ActionBar_Solid
+&Base_Widget_AppCompat_ActionBar_TabBar
+'Base_Widget_AppCompat_ActionBar_TabText
+'Base_Widget_AppCompat_ActionBar_TabView
+"Base_Widget_AppCompat_ActionButton
+,Base_Widget_AppCompat_ActionButton_CloseMode
++Base_Widget_AppCompat_ActionButton_Overflow
+ Base_Widget_AppCompat_ActionMode
+)Base_Widget_AppCompat_ActivityChooserView
+*Base_Widget_AppCompat_AutoCompleteTextView
+Base_Widget_AppCompat_Button
+Base_Widget_AppCompat_ButtonBar
++Base_Widget_AppCompat_ButtonBar_AlertDialog
+'Base_Widget_AppCompat_Button_Borderless
+/Base_Widget_AppCompat_Button_Borderless_Colored
+2Base_Widget_AppCompat_Button_ButtonBar_AlertDialog
+$Base_Widget_AppCompat_Button_Colored
+"Base_Widget_AppCompat_Button_Small
+-Base_Widget_AppCompat_CompoundButton_CheckBox
+0Base_Widget_AppCompat_CompoundButton_RadioButton
++Base_Widget_AppCompat_CompoundButton_Switch
+'Base_Widget_AppCompat_DrawerArrowToggle
+.Base_Widget_AppCompat_DrawerArrowToggle_Common
+*Base_Widget_AppCompat_DropDownItem_Spinner
 Base_Widget_AppCompat_EditText
 !Base_Widget_AppCompat_ImageButton
 %Base_Widget_AppCompat_Light_ActionBar
@@ -392,7 +461,7 @@ fontWeight
  
 
  
- ½    #20BR0X†Pº	ºøðÀ>   Z
+ ½    #20BR0X†Pº	¼øðÀ>   Z
 androidx
 legacy
 v4
@@ -524,7 +593,27 @@ $GradientColor_android_gradientRadius
 
  
  
-	 õ	   620BR0X†Pº	Ò€˜ðÀ>R0X†Pº	Ð„˜ðÀ>R	0X†Pº	Ô„˜ðÀ>R
+	 É    U20BR0X†Pº	€€øðÀ>R	0X†Pº	º€øðÀ>R
+0X†Pº	¼øðÀ>   t
+com
+amitshekhar
+debug
+R
+string
+kotlin
+Any
+PORT_NUMBER
+Int
+app_name
+%status_bar_notification_info_overflow   4
+ 
+ 
+
+ 
+ 
+
+ 
+ õ	   620BR0X†Pº	Ò€˜ðÀ>R0X†Pº	Ð„˜ðÀ>R	0X†Pº	Ô„˜ðÀ>R
 0X†Pº	Ö„˜ðÀ>R0X†Pº	Ø„˜ðÀ>R0X†Pº	Ú„˜ðÀ>R0X†Pº	Ü„˜ðÀ>R0X†Pº	Þ„˜ðÀ>R0X†Pº	à„˜ðÀ>R0X†Pº	â„˜ðÀ>R0X†Pº	ä„˜ðÀ>R0X†Pº	¾Š˜ðÀ>  
 androidx
 swiperefreshlayout
@@ -552,93 +641,4 @@ fontWeight
  
 
  
- é   I20B"0²	
-0²	BF*00*00&"
-*00**0000J0HJ0HJ0HJ& 02!02#*002$0HJ%02&0²	
-HJ!(02)02*0²	
-HR	0X‚R0X²	R0X²	R+0X²	
-À>R.0X²	
-À>  >
-com
-example
-	movie_app
-databinding
-MovieDetailsFragmentBindingImpl
-MovieDetailsFragmentBinding
-bindingComponent
-androidx
-DataBindingComponent
-
-annotation
-Nullable
-root
-android
-view
-View
-NonNull
-bindings
-kotlin
-Array
-Any
-mDirtyFlags
-Long
-mboundView0
-widget
-LinearLayout
-mboundView2
-TextView
-executeBindings
-Unit
-hasPendingBindings
-Boolean
-invalidateAll
-onFieldChange
-localFieldId
-Int
-object
-fieldId
-setMovie
-Movie
-model
-setVariable
-
-variableId
-variable
-	sIncludes
-ViewDataBinding
-IncludedLayouts
-sViewsWithIds
-util
-SparseIntArray   Ö
- 
- 
-
-
- 
- 
-
-
- 
-	
-	
- 
-
-
- 
-	 
-
- 
- 
- 
-
- 
- 
- 
- 
-" 
-'
-& 
-, 
-- 
-/
-0 
+ 

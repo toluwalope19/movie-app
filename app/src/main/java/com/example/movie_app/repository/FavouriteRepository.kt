@@ -16,7 +16,7 @@ class FavouriteRepository(application: Application) : CoroutineScope {
     override val coroutineContext: CoroutineContext
         get() = Dispatchers.Main
 
-    private lateinit var movieDao: MovieDao
+    private var movieDao: MovieDao
 
     init {
         val db = MovieDB.getDatabase(application)
@@ -25,10 +25,11 @@ class FavouriteRepository(application: Application) : CoroutineScope {
 
     fun getFavouriteMessages() = movieDao.getFavourites()
 
-    fun insertFavourite(movie: Movie){
+    fun insertFavourite(movie: Movie) {
         launch { insertFavouriteBackGround(movie) }
     }
-    fun deleteFavourite(movie: Movie){
+
+    fun deleteFavourite(movie: Movie) {
         launch { deleteFavouriteBackGround(movie) }
     }
 //
@@ -41,25 +42,24 @@ class FavouriteRepository(application: Application) : CoroutineScope {
 //    }
 
 
-    private suspend fun insertFavouriteBackGround(movie: Movie){
-        withContext(Dispatchers.IO){
+    private suspend fun insertFavouriteBackGround(movie: Movie) {
+        withContext(Dispatchers.IO) {
             movieDao.insertFavourite(movie)
         }
     }
 
-    private suspend fun deleteFavouriteBackGround(movie: Movie){
-        withContext(Dispatchers.IO){
+    private suspend fun deleteFavouriteBackGround(movie: Movie) {
+        withContext(Dispatchers.IO) {
             movieDao.removeFavourite(movie)
         }
     }
 
-    fun isFavorite(id: Long): Boolean?{
-         // return withContext(Dispatchers.IO){
-        Log.i("Toly",  movieDao.isFavorite(id).toString())
-        return  movieDao.isFavorite(id).isNotEmpty()
+    suspend fun isFavorite(id: Long): Boolean {
+        return withContext(Dispatchers.IO) {
+            Log.i("Toly", movieDao.isFavorite(id).toString())
+            movieDao.isFavorite(id).isNotEmpty()
 
-       // }
-
+        }
 
 
     }

@@ -144,6 +144,7 @@ androidx/navigation/NavDestination$ClassType.class
 androidx/navigation/NavDestinationDsl.class
 androidx/navigation/NavOptionsDsl.class
 androidx/navigation/Navigator$Name.class
+androidx/paging/PageResult$ResultType.class
 androidx/recyclerview/widget/RecyclerView$EdgeEffectFactory$EdgeDirection.class
 androidx/recyclerview/widget/RecyclerView$ItemAnimator$AdapterChanges.class
 androidx/recyclerview/widget/RecyclerView$Orientation.class

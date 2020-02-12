@@ -13,12 +13,22 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".ui.FavouritesFragment">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/favourites_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="150dp"
+            android:id="@+id/errorMessage"
+            android:tint="@color/colorAccent"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/error"/>
 
     </LinearLayout>
 </layout>

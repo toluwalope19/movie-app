@@ -13,10 +13,18 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import com.example.movie_app.R;
 import com.example.movie_app.model.Movie;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
 import java.lang.Deprecated;
 import java.lang.Object;
 
 public abstract class MovieDetailsFragmentBinding extends ViewDataBinding {
+  @NonNull
+  public final AppBarLayout appBarLayout;
+
+  @NonNull
+  public final CollapsingToolbarLayout collapsing;
+
   @NonNull
   public final ImageView detailImage;
 
@@ -39,9 +47,12 @@ public abstract class MovieDetailsFragmentBinding extends ViewDataBinding {
   protected Movie mMovie;
 
   protected MovieDetailsFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView detailImage, TextView divider, ImageView like, TextView movieDetails,
-      TextView releaseDate, TextView voteAverage) {
+      AppBarLayout appBarLayout, CollapsingToolbarLayout collapsing, ImageView detailImage,
+      TextView divider, ImageView like, TextView movieDetails, TextView releaseDate,
+      TextView voteAverage) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.appBarLayout = appBarLayout;
+    this.collapsing = collapsing;
     this.detailImage = detailImage;
     this.divider = divider;
     this.like = like;

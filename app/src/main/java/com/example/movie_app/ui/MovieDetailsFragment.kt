@@ -41,11 +41,11 @@ class MovieDetailsFragment() : Fragment() {
         val image =  args.movie.thumbnail
         val status = args.movie.isFavourite
         val requestOptions = RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL)
-//        if(status){
-//            binding.like.setImageResource(R.drawable.love_fill)
-//        }else{
-//            binding.like.setImageResource(R.drawable.love)
-//        }
+        if(status){
+            binding.like.setImageResource(R.drawable.love_fill)
+        }else{
+            binding.like.setImageResource(R.drawable.love)
+        }
         Glide.with(context!!).load(Util.IMAGE_BASE_URL+"original"+ image)
             .apply(requestOptions)
             .into(binding.detailImage)

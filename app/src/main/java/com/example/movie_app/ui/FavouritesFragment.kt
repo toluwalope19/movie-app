@@ -45,15 +45,21 @@ class FavouritesFragment : Fragment() {
             }
 
 
-        },context!!)
+        },context!!,viewModel.apply {  })
         binding.favouritesRecycler.adapter = adapter
         binding.favouritesRecycler.layoutManager = GridLayoutManager(context,2)
         binding.favouritesRecycler.addItemDecoration(MarginItemDecoration(resources.getDimension(R.dimen.marginTop).toInt()))
 
         viewModel.getMessages().observe(this,Observer<List<Movie>>{favMovies->
 
+            if(favMovies.isEmpty()){
+                binding.errorMessage.setImageResource(R.drawable.poster)
+                adapter.notifyDataSetChanged()
+            }else {
+                binding.errorMessage.visibility = View.GONE
+                adapter.notifyDataSetChanged()
+            }
             adapter.favMovies = favMovies
-            Toast.makeText(context, favMovies.last().thumbnail, Toast.LENGTH_LONG).show()
 
             adapter.notifyDataSetChanged()
 

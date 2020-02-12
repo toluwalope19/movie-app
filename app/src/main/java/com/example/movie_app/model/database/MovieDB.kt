@@ -7,8 +7,10 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.movie_app.model.FavouriteMovie
 import com.example.movie_app.model.Movie
+import com.example.movie_app.util.DbTypeConverters
 
 @Database(entities = [Movie::class], version = 1)
+@TypeConverters(DbTypeConverters::class)
 abstract class MovieDB :RoomDatabase(){
 
     abstract fun MovieDao(): MovieDao

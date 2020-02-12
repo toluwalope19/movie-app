@@ -1,19 +1,27 @@
 package com.example.movie_app.viewmodel
 
+import android.app.Application
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.movie_app.model.Movie
+import com.example.movie_app.repository.FavouriteRepository
 import com.example.movie_app.repository.Repository
 import com.example.movie_app.util.NoInternetExceptions
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 
-class MoviesViewModel : ViewModel() {
+class MoviesViewModel(val application: Application) : ViewModel() {
     private val repository = Repository
+
+    private val favRepo by lazy {
+        FavouriteRepository(application)
+    }
+
+    private val _isFavorite = MutableLiveData<List<Movie>>()
+    val isFavorite: LiveData<List<Movie>>
+        get() = _isFavorite
 
     private val viewModelJob = Job()
 
@@ -22,26 +30,37 @@ class MoviesViewModel : ViewModel() {
     val error = MutableLiveData<String>()
 
     private var _allMovies = MutableLiveData<List<Movie>>()
-        val allMovies
-            get() =_allMovies
-
+    val allMovies
+        get() = _allMovies
 
 
     /**
      * init{} is called immediately when this ViewModel is created.
      */
-        init {
-         viewModelScope.launch {
-             try {
-                 _allMovies.value =  repository.getMovies()
-
-                 Log.i("Hello", repository.getMovies().toString())
-             }catch (e: NoInternetExceptions){
-
-             }
-
+    init {
+        viewModelScope.launch {
+            try {
+                _allMovies.value = repository.getMovies()
+                Log.i("Hello", repository.getMovies().toString())
+            } catch (e: NoInternetExceptions) {
+                e
             }
+
+
         }
+    }
+
+    suspend fun mapFavorite(movies: List<Movie>): List<Movie> {
+
+          val g =  movies.map { movie ->
+                movie.isFavourite = favRepo.isFavorite(movie.id)
+                movie
+            }
+
+        Log.i("Help", g.toString())
+        return g
+
+    }
 
 
     /**
@@ -51,17 +70,6 @@ class MoviesViewModel : ViewModel() {
         super.onCleared()
         viewModelJob.cancel()
     }
-
-
-//    class Factory(val app: Application) : ViewModelProvider.Factory {
-//        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-//            if (modelClass.isAssignableFrom(MoviesViewModel::class.java)) {
-//                @Suppress("UNCHECKED_CAST")
-//                return MoviesViewModel(repository = Repository) as T
-//            }
-//            throw IllegalArgumentException("Unable to construct viewmodel")
-//        }
-//    }
 
 
 }

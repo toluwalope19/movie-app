@@ -1380,6 +1380,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable error
 drawable ic_calendar_black_24dp
 drawable ic_clear_black_24dp
 drawable ic_edit_black_24dp
@@ -1497,6 +1498,7 @@ id add
 id alertTitle
 id all
 id always
+id app_bar_layout
 id async
 id auto
 id barrier
@@ -1519,6 +1521,7 @@ id clear_text
 id clip_horizontal
 id clip_vertical
 id collapseActionView
+id collapsing
 id confirm_button
 id container
 id content
@@ -1548,6 +1551,7 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id errorMessage
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1903,6 +1907,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 navigation navigation
 plurals mtrl_badge_content_description
+string PORT_NUMBER
 string _1hr_52min
 string abc_action_bar_home_description
 string abc_action_bar_up_description

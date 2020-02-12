@@ -4,6 +4,7 @@ package com.example.movie_app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.Bindable;
@@ -17,14 +18,18 @@ import java.lang.Object;
 
 public abstract class FavouritesFragmentBinding extends ViewDataBinding {
   @NonNull
+  public final ImageView errorMessage;
+
+  @NonNull
   public final RecyclerView favouritesRecycler;
 
   @Bindable
   protected FavouriteMovie mMovies;
 
   protected FavouritesFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      RecyclerView favouritesRecycler) {
+      ImageView errorMessage, RecyclerView favouritesRecycler) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.errorMessage = errorMessage;
     this.favouritesRecycler = favouritesRecycler;
   }
 

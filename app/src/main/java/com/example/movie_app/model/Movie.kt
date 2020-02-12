@@ -19,7 +19,8 @@ data class Movie (@PrimaryKey
         var title : String,
 
 //        @SerializedName("genre_ids")
-//        var genre: List<Int>,
+//        @ColumnInfo(name="genre_ids")
+       // var genre: List<Int>,
         @SerializedName("poster_path")
         @ColumnInfo(name="thumbnail")
         var thumbnail: String,

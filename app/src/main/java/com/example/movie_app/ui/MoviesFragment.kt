@@ -3,6 +3,7 @@ package com.example.movie_app.ui
 import android.app.Application
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,11 +18,13 @@ import com.example.movie_app.viewmodel.MoviesViewModel
 import com.example.movie_app.R
 import com.example.movie_app.databinding.MoviesFragmentBinding
 import com.example.movie_app.model.Movie
+import com.example.movie_app.repository.FavoriteRepositoryViewModelFactory
 import com.example.movie_app.ui.adapters.MoviesAdapter
 import com.example.movie_app.util.MarginItemDecoration
 import com.example.movie_app.util.OnItemClickListener
 import com.example.movie_app.viewmodel.FavouritesViewModel
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.runBlocking
 
 
 class MoviesFragment : Fragment() {
@@ -31,6 +34,7 @@ class MoviesFragment : Fragment() {
     }
 
      lateinit var viewModel: MoviesViewModel
+    lateinit var factory: FavoriteRepositoryViewModelFactory
     lateinit var adapter: MoviesAdapter
     lateinit var favModel: FavouritesViewModel
 
@@ -39,8 +43,8 @@ class MoviesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = MoviesFragmentBinding.inflate(inflater, container, false)
-
-         viewModel = ViewModelProvider(this).get(MoviesViewModel::class.java)
+            factory = FavoriteRepositoryViewModelFactory(activity!!.application)
+         viewModel = ViewModelProvider(this, factory).get(MoviesViewModel::class.java)
 
 
         favModel = ViewModelProvider(this).get(FavouritesViewModel::class.java)
@@ -57,11 +61,18 @@ class MoviesFragment : Fragment() {
         binding.topRatedRecyclerView.layoutManager = GridLayoutManager(context,2)
 
 
-        viewModel.allMovies.observe(this, Observer<List<Movie>> {movies ->
-            adapter.movie = movies
+        viewModel.allMovies.observe(viewLifecycleOwner, Observer<List<Movie>> {movies ->
+
+
+            runBlocking {
+                adapter.movie = viewModel.mapFavorite(movies)
+
+            }
+
 
             adapter.notifyDataSetChanged()
         })
+
         binding.topRatedRecyclerView.addItemDecoration(MarginItemDecoration(resources.getDimension(R.dimen.marginTop).toInt()))
 
         binding.fab.setOnClickListener {

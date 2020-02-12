@@ -31,7 +31,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/img_background"
-                android:src="@{movie.thumbnail}"
                 tools:src="@drawable/poster"
                 android:scaleType="fitXY" />
         </androidx.cardview.widget.CardView>
@@ -51,6 +50,16 @@
                 android:textStyle="bold"
                 tools:text="@string/title"
                 android:textSize="16sp" />
+            <ImageView
+                android:id="@+id/like"
+                android:paddingTop="4dp"
+                android:contentDescription="@string/like"
+                android:tint="@color/colorAccent"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="30dp"
+                android:visibility="gone"
+                android:layout_height="30dp"
+                android:src="@drawable/love" />
 
 
             <ImageView

@@ -1432,6 +1432,10 @@
         "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\7d11090a10a5d3f58ca5aa85a172ef20\\material-1.1.0\\res\\drawable-xxxhdpi-v4\\design_ic_visibility_off.png"
     },
     {
+        "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_error.png.flat",
+        "source": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\src\\main\\res\\drawable-v24\\error.png"
+    },
+    {
         "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_36dp.png.flat",
         "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\61d529a8c71b1df6adcd5b10dbc1aacc\\appcompat-1.1.0\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_36dp.png"
     },

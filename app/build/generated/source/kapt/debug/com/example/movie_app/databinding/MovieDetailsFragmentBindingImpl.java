@@ -14,13 +14,14 @@ public class MovieDetailsFragmentBindingImpl extends MovieDetailsFragmentBinding
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.like, 5);
-        sViewsWithIds.put(R.id.divider, 6);
-        sViewsWithIds.put(R.id.release_date, 7);
+        sViewsWithIds.put(R.id.app_bar_layout, 6);
+        sViewsWithIds.put(R.id.collapsing, 7);
+        sViewsWithIds.put(R.id.like, 8);
+        sViewsWithIds.put(R.id.divider, 9);
     }
     // views
     @NonNull
-    private final android.widget.LinearLayout mboundView0;
+    private final androidx.coordinatorlayout.widget.CoordinatorLayout mboundView0;
     @NonNull
     private final android.widget.TextView mboundView2;
     // variables
@@ -29,23 +30,26 @@ public class MovieDetailsFragmentBindingImpl extends MovieDetailsFragmentBinding
     // Inverse Binding Event Handlers
 
     public MovieDetailsFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 10, sIncludes, sViewsWithIds));
     }
     private MovieDetailsFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (com.google.android.material.appbar.AppBarLayout) bindings[6]
+            , (com.google.android.material.appbar.CollapsingToolbarLayout) bindings[7]
             , (android.widget.ImageView) bindings[1]
-            , (android.widget.TextView) bindings[6]
-            , (android.widget.ImageView) bindings[5]
+            , (android.widget.TextView) bindings[9]
+            , (android.widget.ImageView) bindings[8]
+            , (android.widget.TextView) bindings[5]
             , (android.widget.TextView) bindings[4]
-            , (android.widget.TextView) bindings[7]
             , (android.widget.TextView) bindings[3]
             );
         this.detailImage.setTag(null);
-        this.mboundView0 = (android.widget.LinearLayout) bindings[0];
+        this.mboundView0 = (androidx.coordinatorlayout.widget.CoordinatorLayout) bindings[0];
         this.mboundView0.setTag(null);
         this.mboundView2 = (android.widget.TextView) bindings[2];
         this.mboundView2.setTag(null);
         this.movieDetails.setTag(null);
+        this.releaseDate.setTag(null);
         this.voteAverage.setTag(null);
         setRootTag(root);
         // listeners
@@ -107,6 +111,7 @@ public class MovieDetailsFragmentBindingImpl extends MovieDetailsFragmentBinding
         }
         java.lang.String doubleToStringMovieVoteAverage = null;
         java.lang.String movieTitle = null;
+        java.lang.String movieReleaseDate = null;
         java.lang.String movieThumbnail = null;
         com.example.movie_app.model.Movie movie = mMovie;
         java.lang.String movieOverview = null;
@@ -119,6 +124,8 @@ public class MovieDetailsFragmentBindingImpl extends MovieDetailsFragmentBinding
                 if (movie != null) {
                     // read movie.title
                     movieTitle = movie.getTitle();
+                    // read movie.releaseDate
+                    movieReleaseDate = movie.getReleaseDate();
                     // read movie.thumbnail
                     movieThumbnail = movie.getThumbnail();
                     // read movie.overview
@@ -138,6 +145,7 @@ public class MovieDetailsFragmentBindingImpl extends MovieDetailsFragmentBinding
             androidx.databinding.adapters.ImageViewBindingAdapter.setImageUri(this.detailImage, movieThumbnail);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.mboundView2, movieTitle);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.movieDetails, movieOverview);
+            androidx.databinding.adapters.TextViewBindingAdapter.setText(this.releaseDate, movieReleaseDate);
             androidx.databinding.adapters.TextViewBindingAdapter.setText(this.voteAverage, doubleToStringMovieVoteAverage);
         }
     }

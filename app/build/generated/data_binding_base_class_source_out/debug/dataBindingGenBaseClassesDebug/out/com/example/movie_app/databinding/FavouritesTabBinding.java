@@ -22,6 +22,9 @@ public abstract class FavouritesTabBinding extends ViewDataBinding {
   public final TextView divider;
 
   @NonNull
+  public final ImageView like;
+
+  @NonNull
   public final ImageView moviePoster;
 
   @NonNull
@@ -40,10 +43,11 @@ public abstract class FavouritesTabBinding extends ViewDataBinding {
   protected FavouritesViewModel mFavMovie;
 
   protected FavouritesTabBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      TextView divider, ImageView moviePoster, TextView rating, TextView releaseDate,
-      ImageView unlike) {
+      TextView divider, ImageView like, ImageView moviePoster, TextView rating,
+      TextView releaseDate, ImageView unlike) {
     super(_bindingComponent, _root, _localFieldCount);
     this.divider = divider;
+    this.like = like;
     this.moviePoster = moviePoster;
     this.rating = rating;
     this.releaseDate = releaseDate;
