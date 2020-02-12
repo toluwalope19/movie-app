@@ -16,7 +16,8 @@ public class MoviesFragmentBindingImpl extends MoviesFragmentBinding  {
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.topRated_recyclerView, 1);
         sViewsWithIds.put(R.id.progressBar, 2);
-        sViewsWithIds.put(R.id.fab, 3);
+        sViewsWithIds.put(R.id.errorMessage, 3);
+        sViewsWithIds.put(R.id.fab, 4);
     }
     // views
     @NonNull
@@ -27,11 +28,12 @@ public class MoviesFragmentBindingImpl extends MoviesFragmentBinding  {
     // Inverse Binding Event Handlers
 
     public MoviesFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 4, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 5, sIncludes, sViewsWithIds));
     }
     private MoviesFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[3]
+            , (android.widget.ImageView) bindings[3]
+            , (com.google.android.material.floatingactionbutton.FloatingActionButton) bindings[4]
             , (android.widget.ProgressBar) bindings[2]
             , (androidx.recyclerview.widget.RecyclerView) bindings[1]
             );

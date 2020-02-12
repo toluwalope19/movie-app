@@ -14,12 +14,14 @@ public class FavouriteDetailFragmentBindingImpl extends FavouriteDetailFragmentB
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.like, 6);
-        sViewsWithIds.put(R.id.divider, 7);
+        sViewsWithIds.put(R.id.app_bar_layout, 6);
+        sViewsWithIds.put(R.id.collapsing, 7);
+        sViewsWithIds.put(R.id.like, 8);
+        sViewsWithIds.put(R.id.divider, 9);
     }
     // views
     @NonNull
-    private final android.widget.LinearLayout mboundView0;
+    private final androidx.coordinatorlayout.widget.CoordinatorLayout mboundView0;
     @NonNull
     private final android.widget.TextView mboundView2;
     // variables
@@ -28,19 +30,21 @@ public class FavouriteDetailFragmentBindingImpl extends FavouriteDetailFragmentB
     // Inverse Binding Event Handlers
 
     public FavouriteDetailFragmentBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 10, sIncludes, sViewsWithIds));
     }
     private FavouriteDetailFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (com.google.android.material.appbar.AppBarLayout) bindings[6]
+            , (com.google.android.material.appbar.CollapsingToolbarLayout) bindings[7]
             , (android.widget.ImageView) bindings[1]
-            , (android.widget.TextView) bindings[7]
-            , (android.widget.ImageView) bindings[6]
+            , (android.widget.TextView) bindings[9]
+            , (android.widget.ImageView) bindings[8]
             , (android.widget.TextView) bindings[5]
             , (android.widget.TextView) bindings[4]
             , (android.widget.TextView) bindings[3]
             );
         this.detailImage.setTag(null);
-        this.mboundView0 = (android.widget.LinearLayout) bindings[0];
+        this.mboundView0 = (androidx.coordinatorlayout.widget.CoordinatorLayout) bindings[0];
         this.mboundView0.setTag(null);
         this.mboundView2 = (android.widget.TextView) bindings[2];
         this.mboundView2.setTag(null);

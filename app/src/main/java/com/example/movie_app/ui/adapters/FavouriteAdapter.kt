@@ -16,12 +16,14 @@ import com.example.movie_app.util.Util
 import com.example.movie_app.viewmodel.FavouritesViewModel
 import com.google.android.material.snackbar.Snackbar
 
-class FavouriteAdapter(private val onFavouritClickListener: OnFavouritClickListener,
-                       private val context: Context,
-                       val model: FavouritesViewModel ) : RecyclerView.Adapter<FavouriteAdapter.FavouriteHolder>() {
+class FavouriteAdapter(
+    private val onFavouritClickListener: OnFavouritClickListener,
+    private val context: Context,
+    val model: FavouritesViewModel
+) : RecyclerView.Adapter<FavouriteAdapter.FavouriteHolder>() {
 
 
-    var favMovies: List<Movie> =  listOf()
+    var favMovies: List<Movie> = listOf()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -33,7 +35,7 @@ class FavouriteAdapter(private val onFavouritClickListener: OnFavouritClickListe
     }
 
     override fun getItemCount(): Int {
-       return favMovies.size
+        return favMovies.size
     }
 
     override fun onBindViewHolder(holder: FavouriteHolder, position: Int) {
@@ -44,7 +46,7 @@ class FavouriteAdapter(private val onFavouritClickListener: OnFavouritClickListe
             .load(Uri.parse(Util.IMAGE_BASE_URL + "original" + movie.thumbnail))
             .apply(requestOptions)
             .transform(RoundedCorners(30)).into(holder.binding.moviePoster)
-        holder.bind(movie,onFavouritClickListener)
+        holder.bind(movie, onFavouritClickListener)
         holder.binding.unlike.setOnClickListener {
             model.removeFavourite(movie)
             Snackbar.make(it, "Movie Removed From Favourites", Snackbar.LENGTH_LONG).show()
@@ -52,7 +54,8 @@ class FavouriteAdapter(private val onFavouritClickListener: OnFavouritClickListe
         }
     }
 
-    class FavouriteHolder(var binding: FavouritesTabBinding): RecyclerView.ViewHolder(binding.root) {
+    class FavouriteHolder(var binding: FavouritesTabBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
 
         fun bind(item: Movie, onFavouritClickListener: OnFavouritClickListener) {

@@ -1,3 +1,4 @@
+
 package com.example.movie_app.ui.adapters
 
 import android.app.Application
@@ -109,7 +110,7 @@ class MoviesAdapter(
 
     class MovieHolder(var binding: TopRatedBinding, var application: Application, var model: FavouritesViewModel) : RecyclerView.ViewHolder(binding.root) {
 
-         fun bind(item: Movie, onItemClickListener: OnItemClickListener) {
+        fun bind(item: Movie, onItemClickListener: OnItemClickListener) {
 
             binding.movie = item
             val repo = FavouriteRepository(application)
@@ -122,21 +123,32 @@ class MoviesAdapter(
                 binding.like.visibility = View.VISIBLE
                 binding.unlike.visibility = View.GONE
             }
-             binding.like.setOnClickListener {
-                 if (!item.isFavourite) {
-                     item.isFavourite = true
-                     binding.like.setImageResource(R.drawable.love_fill)
-                     model.addFavourites(item)
-                     Snackbar.make(it, "Movie Added to Favourites", Snackbar.LENGTH_LONG).show()
-                 } else {
-                     item.isFavourite = false
-                     binding.like.setImageResource(R.drawable.love)
-                     model.removeFavourite(item)
-                     Snackbar.make(it, "Movie Removed from Favourites", Snackbar.LENGTH_LONG).show()
-                 }
-
-
-             }
+            binding.like.setOnClickListener {
+                if (!item.isFavourite) {
+                    item.isFavourite = true
+                    binding.like.setImageResource(R.drawable.love_fill)
+                    model.addFavourites(item)
+                    Snackbar.make(it, "Movie Added to Favourites", Snackbar.LENGTH_LONG).show()
+                } else {
+                    item.isFavourite = false
+                    binding.like.setImageResource(R.drawable.love)
+                    model.removeFavourite(item)
+                    Snackbar.make(it, "Movie Removed from Favourites", Snackbar.LENGTH_LONG).show()
+                }
+            }
+            binding.unlike.setOnClickListener {
+                if(item.isFavourite) {
+                    item.isFavourite = false
+                    model.removeFavourite(item)
+                    binding.unlike.setImageResource(R.drawable.love)
+                    Snackbar.make(it, "Movie Removed from Favourites", Snackbar.LENGTH_LONG).show()
+                }else{
+                    item.isFavourite = true
+                    model.addFavourites(item)
+                    binding.like.setImageResource(R.drawable.love_fill)
+                    Snackbar.make(it, "Movie Removed from Favourites", Snackbar.LENGTH_LONG).show()
+                }
+            }
             binding.root.setOnClickListener {
                 onItemClickListener.onClickAction(item)
             }

@@ -33,6 +33,7 @@ object Injection {
         return provideRetrofit().create(MovieApi::class.java)
     }
 
+
     fun isNetworkAvailable(context: Context): Boolean? {
 
         val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager

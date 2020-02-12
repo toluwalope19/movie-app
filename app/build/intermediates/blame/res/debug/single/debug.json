@@ -1516,6 +1516,10 @@
         "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\61d529a8c71b1df6adcd5b10dbc1aacc\\appcompat-1.1.0\\res\\drawable\\abc_ratingbar_indicator_material.xml"
     },
     {
+        "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_cloud_error.png.flat",
+        "source": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\src\\main\\res\\drawable-v24\\cloud_error.png"
+    },
+    {
         "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\61d529a8c71b1df6adcd5b10dbc1aacc\\appcompat-1.1.0\\res\\drawable-xxhdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
