@@ -1428,7 +1428,6 @@ id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id FUNCTION
-id Fav_like
 id Fragment
 id META
 id SHIFT
@@ -1734,6 +1733,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id toolbar
 id top
 id topPanel
 id topRated_recyclerView
@@ -1746,6 +1746,7 @@ id transition_transform
 id unchecked
 id uniform
 id unlabeled
+id unlike
 id up
 id useLogo
 id view_offset_helper
@@ -2497,6 +2498,7 @@ style ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox
 style ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense
 style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
+style Toolbar_TitleText
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar

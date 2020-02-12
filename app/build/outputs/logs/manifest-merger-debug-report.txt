@@ -126,7 +126,7 @@ MERGED from [com.github.bumptech.glide:gifdecoder:4.10.0] C:\Users\Ayodele\.grad
 	android:allowBackup
 		ADDED from C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
-		ADDED from C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:13:9-40
+		ADDED from C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:13:9-65
 activity#com.example.movie_app.MainActivity
 ADDED from C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:14:9-20:20
 	android:name

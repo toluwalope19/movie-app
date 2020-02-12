@@ -7,9 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 
 import com.example.movie_app.viewmodel.FavouriteDetailViewModel
 import com.example.movie_app.databinding.FavouriteDetailFragmentBinding
+import com.example.movie_app.util.Util
 
 
 class FavouriteDetailFragment : Fragment() {
@@ -29,6 +33,10 @@ class FavouriteDetailFragment : Fragment() {
         val binding =  FavouriteDetailFragmentBinding.inflate(inflater, container, false)
 
         binding.movie = args.movie
+        val requestOptions = RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL)
+        val image =  args.movie.thumbnail
+        Glide.with(context!!).load(Util.IMAGE_BASE_URL+"original"+ image)
+            .apply(requestOptions).into(binding.detailImage)
 
         return binding.root
     }

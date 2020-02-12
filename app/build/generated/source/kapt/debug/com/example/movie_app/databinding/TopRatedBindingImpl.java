@@ -15,7 +15,8 @@ public class TopRatedBindingImpl extends TopRatedBinding  {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.like, 5);
-        sViewsWithIds.put(R.id.divider, 6);
+        sViewsWithIds.put(R.id.unlike, 6);
+        sViewsWithIds.put(R.id.divider, 7);
     }
     // views
     @NonNull
@@ -28,15 +29,16 @@ public class TopRatedBindingImpl extends TopRatedBinding  {
     // Inverse Binding Event Handlers
 
     public TopRatedBindingImpl(@Nullable androidx.databinding.DataBindingComponent bindingComponent, @NonNull View root) {
-        this(bindingComponent, root, mapBindings(bindingComponent, root, 7, sIncludes, sViewsWithIds));
+        this(bindingComponent, root, mapBindings(bindingComponent, root, 8, sIncludes, sViewsWithIds));
     }
     private TopRatedBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.TextView) bindings[6]
+            , (android.widget.TextView) bindings[7]
             , (android.widget.ImageView) bindings[5]
             , (android.widget.ImageView) bindings[1]
             , (android.widget.TextView) bindings[3]
             , (android.widget.TextView) bindings[4]
+            , (android.widget.ImageView) bindings[6]
             );
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];
         this.mboundView0.setTag(null);

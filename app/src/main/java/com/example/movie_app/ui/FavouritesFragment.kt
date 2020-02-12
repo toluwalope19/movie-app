@@ -17,6 +17,7 @@ import com.example.movie_app.databinding.FavouritesTabBinding
 import com.example.movie_app.model.FavouriteMovie
 import com.example.movie_app.model.Movie
 import com.example.movie_app.ui.adapters.FavouriteAdapter
+import com.example.movie_app.util.MarginItemDecoration
 import com.example.movie_app.util.OnFavouritClickListener
 import com.example.movie_app.viewmodel.FavouritesViewModel
 
@@ -47,6 +48,7 @@ class FavouritesFragment : Fragment() {
         },context!!)
         binding.favouritesRecycler.adapter = adapter
         binding.favouritesRecycler.layoutManager = GridLayoutManager(context,2)
+        binding.favouritesRecycler.addItemDecoration(MarginItemDecoration(resources.getDimension(R.dimen.marginTop).toInt()))
 
         viewModel.getMessages().observe(this,Observer<List<Movie>>{favMovies->
 

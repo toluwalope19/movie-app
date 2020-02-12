@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.request.RequestOptions
 import com.example.movie_app.R
 import com.example.movie_app.databinding.MovieDetailsFragmentBinding
 import com.example.movie_app.model.Movie
@@ -37,7 +39,16 @@ class MovieDetailsFragment() : Fragment() {
 
         binding.movie = args.movie
         val image =  args.movie.thumbnail
-        Glide.with(context!!).load(Util.IMAGE_BASE_URL+""+ image).into(binding.detailImage)
+        val status = args.movie.isFavourite
+        val requestOptions = RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL)
+//        if(status){
+//            binding.like.setImageResource(R.drawable.love_fill)
+//        }else{
+//            binding.like.setImageResource(R.drawable.love)
+//        }
+        Glide.with(context!!).load(Util.IMAGE_BASE_URL+"original"+ image)
+            .apply(requestOptions)
+            .into(binding.detailImage)
 
 
         return binding.root

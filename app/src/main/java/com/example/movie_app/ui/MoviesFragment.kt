@@ -18,8 +18,10 @@ import com.example.movie_app.R
 import com.example.movie_app.databinding.MoviesFragmentBinding
 import com.example.movie_app.model.Movie
 import com.example.movie_app.ui.adapters.MoviesAdapter
+import com.example.movie_app.util.MarginItemDecoration
 import com.example.movie_app.util.OnItemClickListener
 import com.example.movie_app.viewmodel.FavouritesViewModel
+import com.google.android.material.snackbar.Snackbar
 
 
 class MoviesFragment : Fragment() {
@@ -50,15 +52,17 @@ class MoviesFragment : Fragment() {
                 findNavController(this@MoviesFragment).navigate(action)
             }
 
-        },context!!,favModel.apply {  })
+        },context!!,favModel.apply {  }, activity!!.application)
         binding.topRatedRecyclerView.adapter = adapter
         binding.topRatedRecyclerView.layoutManager = GridLayoutManager(context,2)
 
 
         viewModel.allMovies.observe(this, Observer<List<Movie>> {movies ->
             adapter.movie = movies
+
             adapter.notifyDataSetChanged()
         })
+        binding.topRatedRecyclerView.addItemDecoration(MarginItemDecoration(resources.getDimension(R.dimen.marginTop).toInt()))
 
         binding.fab.setOnClickListener {
             val action = MoviesFragmentDirections.actionMoviesFragmentToFavouritesFragment()

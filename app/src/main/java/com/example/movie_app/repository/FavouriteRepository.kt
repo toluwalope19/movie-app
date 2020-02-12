@@ -1,14 +1,13 @@
 package com.example.movie_app.repository
 
 import android.app.Application
+import android.util.Log
+import androidx.lifecycle.LiveData
 import com.example.movie_app.model.FavouriteMovie
 import com.example.movie_app.model.Movie
 import com.example.movie_app.model.database.MovieDB
 import com.example.movie_app.model.database.MovieDao
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
 class FavouriteRepository(application: Application) : CoroutineScope {
@@ -32,6 +31,14 @@ class FavouriteRepository(application: Application) : CoroutineScope {
     fun deleteFavourite(movie: Movie){
         launch { deleteFavouriteBackGround(movie) }
     }
+//
+//
+//    fun isFavorited(id: Long): Boolean?{
+//       return runBlocking {
+//            isFavorite(id)
+//        }
+//
+//    }
 
 
     private suspend fun insertFavouriteBackGround(movie: Movie){
@@ -44,5 +51,16 @@ class FavouriteRepository(application: Application) : CoroutineScope {
         withContext(Dispatchers.IO){
             movieDao.removeFavourite(movie)
         }
+    }
+
+    fun isFavorite(id: Long): Boolean?{
+         // return withContext(Dispatchers.IO){
+        Log.i("Toly",  movieDao.isFavorite(id).toString())
+        return  movieDao.isFavorite(id).isNotEmpty()
+
+       // }
+
+
+
     }
 }

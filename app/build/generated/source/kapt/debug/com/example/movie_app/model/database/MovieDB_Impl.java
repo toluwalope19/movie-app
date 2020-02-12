@@ -30,9 +30,9 @@ public final class MovieDB_Impl extends MovieDB {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `movieTable` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `title` TEXT NOT NULL, `thumbnail` TEXT NOT NULL, `rating` TEXT NOT NULL, `vote_average` REAL NOT NULL, `overview` TEXT NOT NULL, `favourite` INTEGER NOT NULL)");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `movieTable` (`id` INTEGER NOT NULL, `title` TEXT NOT NULL, `thumbnail` TEXT NOT NULL, `rating` TEXT NOT NULL, `vote_average` REAL NOT NULL, `overview` TEXT NOT NULL, `favourite` INTEGER NOT NULL, PRIMARY KEY(`id`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'fa937b2e4febcbeb9eeb86c502ee6244')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f800f084d0afdf69836d43c3c0c483e5')");
       }
 
       @Override
@@ -95,7 +95,7 @@ public final class MovieDB_Impl extends MovieDB {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "fa937b2e4febcbeb9eeb86c502ee6244", "11c9814266669e2f57c9a5f2d46dc19f");
+    }, "f800f084d0afdf69836d43c3c0c483e5", "796b9b8dc7e5ba4131db26e009f54f7b");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

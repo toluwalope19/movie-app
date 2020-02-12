@@ -14,7 +14,7 @@ public class FavouritesTabBindingImpl extends FavouritesTabBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.Fav_like, 5);
+        sViewsWithIds.put(R.id.unlike, 5);
         sViewsWithIds.put(R.id.divider, 6);
     }
     // views
@@ -32,11 +32,11 @@ public class FavouritesTabBindingImpl extends FavouritesTabBinding  {
     }
     private FavouritesTabBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.ImageView) bindings[5]
             , (android.widget.TextView) bindings[6]
             , (android.widget.ImageView) bindings[1]
             , (android.widget.TextView) bindings[3]
             , (android.widget.TextView) bindings[4]
+            , (android.widget.ImageView) bindings[5]
             );
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];
         this.mboundView0.setTag(null);

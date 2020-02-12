@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/moviesFragment"
         android:name="com.example.movie_app.ui.MoviesFragment"
-        android:label="movies_fragment"
+        android:label="Top Rated Movies"
         tools:layout="@layout/movies_fragment" >
         <action
             android:id="@+id/action_moviesFragment_to_movieDetailsFragment"
@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/movieDetailsFragment"
         android:name="com.example.movie_app.ui.MovieDetailsFragment"
-        android:label="movie_details_fragment"
+        android:label="Movie Details"
         tools:layout="@layout/movie_details_fragment" >
         <action
             android:id="@+id/action_movieDetailsFragment_to_moviesFragment"
@@ -32,7 +32,7 @@
     <fragment
         android:id="@+id/favouritesFragment"
         android:name="com.example.movie_app.ui.FavouritesFragment"
-        android:label="favourites_fragment"
+        android:label="Favourite Movies"
         tools:layout="@layout/favourites_fragment" >
         <action
             android:id="@+id/action_favouritesFragment_to_moviesFragment"
@@ -47,7 +47,7 @@
     <fragment
         android:id="@+id/favouriteDetailFragment"
         android:name="com.example.movie_app.ui.FavouriteDetailFragment"
-        android:label="FavouriteDetailFragment" >
+        android:label="Movie Details" >
         <argument
             android:name="movie"
             app:argType="com.example.movie_app.model.Movie" />

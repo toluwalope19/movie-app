@@ -13,8 +13,8 @@
     </data>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="280dp"
         android:orientation="vertical"
         android:background="@color/colorPrimaryDark"
         android:layout_gravity="center_horizontal|center">
@@ -37,24 +37,24 @@
         </androidx.cardview.widget.CardView>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="20dp"
                 android:paddingTop="4dp"
+                android:gravity="center"
                 style="@style/TextColor"
-                android:layout_gravity="end"
                 android:text="@{movie.title}"
                 android:textStyle="bold"
                 tools:text="@string/title"
-                android:textSize="12sp" />
+                android:textSize="16sp" />
 
 
             <ImageView
-                android:id="@+id/Fav_like"
+                android:id="@+id/unlike"
                 android:paddingTop="4dp"
                 android:contentDescription="@string/like"
                 android:tint="@color/colorAccent"
@@ -67,6 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="4dp"
+                android:layout_gravity="center"
                 android:orientation="horizontal"
                 android:weightSum="3">
 
@@ -76,7 +77,11 @@
                     android:layout_height="wrap_content"
                     android:text="@{Double.toString(movie.voteAverage)}"
                     android:layout_gravity="center_horizontal"
+                    android:paddingEnd="4dp"
                     android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:drawableStart="@drawable/ic_star_black_24dp"
                     tools:text="5.7"
                     style="@style/TextColor"
                     android:layout_weight="1" />
@@ -95,7 +100,9 @@
                     android:layout_height="wrap_content"
                     style="@style/TextColor"
                     android:layout_gravity="center_horizontal"
-                    android:paddingStart="@dimen/marginTop"
+                    android:paddingStart="4dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
                     android:paddingEnd="@dimen/marginTop"
                     android:text="@{movie.releaseDate}"
                     android:layout_weight="1" />

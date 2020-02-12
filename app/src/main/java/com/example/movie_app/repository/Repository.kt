@@ -1,9 +1,7 @@
 package com.example.movie_app.repository
 
 import android.util.Log
-import androidx.lifecycle.MutableLiveData
 import com.example.movie_app.app.Injection
-import com.example.movie_app.model.GetMoviesResponse
 import com.example.movie_app.model.Movie
 import kotlinx.coroutines.*
 
@@ -11,6 +9,8 @@ import kotlinx.coroutines.*
 object Repository {
 
     private val api = Injection.provideMovieApi()
+
+
 
 
 

@@ -34,8 +34,8 @@
 22        android:supportsRtl="true"
 22-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:12:9-35
 23        android:testOnly="true"
-24        android:theme="@style/AppTheme" >
-24-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:13:9-40
+24        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+24-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:13:9-65
 25        <activity android:name="com.example.movie_app.MainActivity" >
 25-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:14:9-20:20
 25-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:14:19-47

@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.movie_app.model.Movie
 import com.example.movie_app.repository.Repository
+import com.example.movie_app.util.NoInternetExceptions
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -18,25 +19,27 @@ class MoviesViewModel : ViewModel() {
 
     private val viewModelScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
-    val isLike = MutableLiveData<Boolean>()
+    val error = MutableLiveData<String>()
 
     private var _allMovies = MutableLiveData<List<Movie>>()
         val allMovies
             get() =_allMovies
 
-     private fun likeMovie(){
-         isLike.value = true
 
-
-     }
 
     /**
      * init{} is called immediately when this ViewModel is created.
      */
         init {
          viewModelScope.launch {
-          _allMovies.value =  repository.getMovies()
-             Log.i("Hello", repository.getMovies().toString())
+             try {
+                 _allMovies.value =  repository.getMovies()
+
+                 Log.i("Hello", repository.getMovies().toString())
+             }catch (e: NoInternetExceptions){
+
+             }
+
             }
         }
 

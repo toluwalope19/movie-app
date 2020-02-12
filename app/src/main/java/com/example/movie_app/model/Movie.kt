@@ -8,11 +8,11 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 @Entity(tableName = "movieTable")
 @Parcelize
-data class Movie (@PrimaryKey(autoGenerate = true)
+data class Movie (@PrimaryKey
 
           @ColumnInfo(name = "id")
          @SerializedName("id")
-          var id: Int = 0,
+          var id: Long = 0,
 
         @SerializedName("title")
         @ColumnInfo(name="title")

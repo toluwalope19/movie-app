@@ -33,6 +33,9 @@ public abstract class TopRatedBinding extends ViewDataBinding {
   @NonNull
   public final TextView releaseDate;
 
+  @NonNull
+  public final ImageView unlike;
+
   @Bindable
   protected Movie mMovie;
 
@@ -41,13 +44,14 @@ public abstract class TopRatedBinding extends ViewDataBinding {
 
   protected TopRatedBinding(Object _bindingComponent, View _root, int _localFieldCount,
       TextView divider, ImageView like, ImageView moviePoster, TextView rating,
-      TextView releaseDate) {
+      TextView releaseDate, ImageView unlike) {
     super(_bindingComponent, _root, _localFieldCount);
     this.divider = divider;
     this.like = like;
     this.moviePoster = moviePoster;
     this.rating = rating;
     this.releaseDate = releaseDate;
+    this.unlike = unlike;
   }
 
   public abstract void setMovie(@Nullable Movie movie);

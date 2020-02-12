@@ -14,6 +14,9 @@ interface MovieDao {
     @Query("SELECT * from movieTable ORDER BY id ASC")
     fun getFavourites() : LiveData<List<Movie>>
 
+    @Query("SELECT * from movieTable where id = :id")
+    fun isFavorite(id: Long) : List<Movie>
+
     @Delete
     fun removeFavourite(movie: Movie)
 }

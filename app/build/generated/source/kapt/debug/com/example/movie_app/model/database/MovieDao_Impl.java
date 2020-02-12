@@ -31,7 +31,7 @@ public final class MovieDao_Impl implements MovieDao {
     this.__insertionAdapterOfMovie = new EntityInsertionAdapter<Movie>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `movieTable` (`id`,`title`,`thumbnail`,`rating`,`vote_average`,`overview`,`favourite`) VALUES (nullif(?, 0),?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `movieTable` (`id`,`title`,`thumbnail`,`rating`,`vote_average`,`overview`,`favourite`) VALUES (?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -119,8 +119,8 @@ public final class MovieDao_Impl implements MovieDao {
           final List<Movie> _result = new ArrayList<Movie>(_cursor.getCount());
           while(_cursor.moveToNext()) {
             final Movie _item;
-            final int _tmpId;
-            _tmpId = _cursor.getInt(_cursorIndexOfId);
+            final long _tmpId;
+            _tmpId = _cursor.getLong(_cursorIndexOfId);
             final String _tmpTitle;
             _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
             final String _tmpThumbnail;
@@ -149,5 +149,50 @@ public final class MovieDao_Impl implements MovieDao {
         _statement.release();
       }
     });
+  }
+
+  @Override
+  public List<Movie> isFavorite(final long id) {
+    final String _sql = "SELECT * from movieTable where id = ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    _statement.bindLong(_argIndex, id);
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+      final int _cursorIndexOfTitle = CursorUtil.getColumnIndexOrThrow(_cursor, "title");
+      final int _cursorIndexOfThumbnail = CursorUtil.getColumnIndexOrThrow(_cursor, "thumbnail");
+      final int _cursorIndexOfReleaseDate = CursorUtil.getColumnIndexOrThrow(_cursor, "rating");
+      final int _cursorIndexOfVoteAverage = CursorUtil.getColumnIndexOrThrow(_cursor, "vote_average");
+      final int _cursorIndexOfOverview = CursorUtil.getColumnIndexOrThrow(_cursor, "overview");
+      final int _cursorIndexOfIsFavourite = CursorUtil.getColumnIndexOrThrow(_cursor, "favourite");
+      final List<Movie> _result = new ArrayList<Movie>(_cursor.getCount());
+      while(_cursor.moveToNext()) {
+        final Movie _item;
+        final long _tmpId;
+        _tmpId = _cursor.getLong(_cursorIndexOfId);
+        final String _tmpTitle;
+        _tmpTitle = _cursor.getString(_cursorIndexOfTitle);
+        final String _tmpThumbnail;
+        _tmpThumbnail = _cursor.getString(_cursorIndexOfThumbnail);
+        final String _tmpReleaseDate;
+        _tmpReleaseDate = _cursor.getString(_cursorIndexOfReleaseDate);
+        final double _tmpVoteAverage;
+        _tmpVoteAverage = _cursor.getDouble(_cursorIndexOfVoteAverage);
+        final String _tmpOverview;
+        _tmpOverview = _cursor.getString(_cursorIndexOfOverview);
+        final boolean _tmpIsFavourite;
+        final int _tmp;
+        _tmp = _cursor.getInt(_cursorIndexOfIsFavourite);
+        _tmpIsFavourite = _tmp != 0;
+        _item = new Movie(_tmpId,_tmpTitle,_tmpThumbnail,_tmpReleaseDate,_tmpVoteAverage,_tmpOverview,_tmpIsFavourite);
+        _result.add(_item);
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
   }
 }

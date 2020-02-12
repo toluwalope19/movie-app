@@ -7,10 +7,8 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.example.movie_app.model.FavouriteMovie
 import com.example.movie_app.model.Movie
-import com.example.movie_app.util.ListIntTypeConverters
 
 @Database(entities = [Movie::class], version = 1)
-@TypeConverters(ListIntTypeConverters::class)
 abstract class MovieDB :RoomDatabase(){
 
     abstract fun MovieDao(): MovieDao
@@ -21,7 +19,9 @@ abstract class MovieDB :RoomDatabase(){
         fun getDatabase( context: Context): MovieDB {
             if(instance == null){
                 instance = Room.databaseBuilder(context,
-                    MovieDB::class.java,"Data").build()
+                    MovieDB::class.java,"Data")
+                    .allowMainThreadQueries()
+                    .build()
                 return instance!!
 
             }

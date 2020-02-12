@@ -19,9 +19,6 @@ import java.lang.Object;
 
 public abstract class FavouritesTabBinding extends ViewDataBinding {
   @NonNull
-  public final ImageView FavLike;
-
-  @NonNull
   public final TextView divider;
 
   @NonNull
@@ -33,6 +30,9 @@ public abstract class FavouritesTabBinding extends ViewDataBinding {
   @NonNull
   public final TextView releaseDate;
 
+  @NonNull
+  public final ImageView unlike;
+
   @Bindable
   protected Movie mMovie;
 
@@ -40,14 +40,14 @@ public abstract class FavouritesTabBinding extends ViewDataBinding {
   protected FavouritesViewModel mFavMovie;
 
   protected FavouritesTabBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView FavLike, TextView divider, ImageView moviePoster, TextView rating,
-      TextView releaseDate) {
+      TextView divider, ImageView moviePoster, TextView rating, TextView releaseDate,
+      ImageView unlike) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.FavLike = FavLike;
     this.divider = divider;
     this.moviePoster = moviePoster;
     this.rating = rating;
     this.releaseDate = releaseDate;
+    this.unlike = unlike;
   }
 
   public abstract void setMovie(@Nullable Movie movie);

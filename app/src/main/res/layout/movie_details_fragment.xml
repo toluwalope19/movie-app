@@ -13,8 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingStart="@dimen/marginTop"
-        android:paddingEnd="@dimen/marginTop"
+
         android:background="@color/colorPrimaryDark"
         android:orientation="vertical"
         tools:context=".ui.MovieDetailsFragment">
@@ -31,6 +30,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/marginTop"
             android:paddingTop="4dp"
             style="@style/TextColor"
             android:text="@{movie.title}"
@@ -41,6 +41,7 @@
             android:id="@+id/like"
             android:paddingTop="4dp"
             android:layout_marginTop="8dp"
+            android:layout_marginStart="@dimen/marginTop"
             android:contentDescription="@string/like"
             android:tint="@color/colorAccent"
             android:scaleType="centerCrop"
@@ -60,6 +61,7 @@
                 android:textSize="18sp"
                 android:paddingTop="8dp"
                 android:textStyle="bold"
+                android:layout_marginStart="8dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@{Double.toString(movie.voteAverage)}"
@@ -102,6 +104,7 @@
             android:layout_height="wrap_content"
             style="@style/TextColor"
             android:id="@+id/movie_details"
+            android:layout_marginStart="@dimen/marginTop"
             android:layout_marginTop="8dp"
             android:textSize="16sp"
             android:paddingEnd="8dp"
