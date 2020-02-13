@@ -42,9 +42,6 @@ class MoviesAdapter(
 ) : ListAdapter<Movie,MoviesAdapter.MovieHolder>(DiffCallback) {
 
     var movie: List<Movie> = listOf()
-    val favMovies: List<FavouriteMovie> = listOf()
-    lateinit var favouritesViewModel: FavouritesViewModel
-
 
 
     companion object DiffCallback: DiffUtil.ItemCallback<Movie>(){

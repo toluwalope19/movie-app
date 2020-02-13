@@ -39,19 +39,22 @@ class FavouriteAdapter(
     }
 
     override fun onBindViewHolder(holder: FavouriteHolder, position: Int) {
-        val movie = favMovies.get(position)
-        val image = movie.thumbnail
-        val requestOptions = RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL)
-        Glide.with(context)
-            .load(Uri.parse(Util.IMAGE_BASE_URL + "original" + movie.thumbnail))
-            .apply(requestOptions)
-            .transform(RoundedCorners(30)).into(holder.binding.moviePoster)
-        holder.bind(movie, onFavouritClickListener)
-        holder.binding.unlike.setOnClickListener {
-            model.removeFavourite(movie)
-            Snackbar.make(it, "Movie Removed From Favourites", Snackbar.LENGTH_LONG).show()
-            notifyItemChanged(movie.id.toInt())
-        }
+            val movie = favMovies.get(position)
+            val requestOptions = RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL)
+
+            Glide.with(context)
+                .load(Uri.parse(Util.IMAGE_BASE_URL + "original" + movie.thumbnail))
+                .apply(requestOptions)
+                .transform(RoundedCorners(30)).into(holder.binding.moviePoster)
+
+            holder.bind(movie, onFavouritClickListener)
+
+            holder.binding.unlike.setOnClickListener {
+                model.removeFavourite(movie)
+                Snackbar.make(it, "Movie Removed From Favourites", Snackbar.LENGTH_LONG).show()
+                notifyItemChanged(movie.id.toInt())
+            }
+
     }
 
     class FavouriteHolder(var binding: FavouritesTabBinding) :

@@ -30,27 +30,9 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController)
 
-       isNetworkAvailable(applicationContext)
 
     }
 
-    fun isNetworkAvailable(context: Context){
-
-        val cm = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val activeNetwork = cm.activeNetworkInfo
-        if (activeNetwork != null) {
-            if (activeNetwork.type == ConnectivityManager.TYPE_WIFI) {
-                Toast.makeText(context,"Please check network", Toast.LENGTH_LONG).show()
-            } else if (activeNetwork.type == ConnectivityManager.TYPE_MOBILE) {
-                Toast.makeText(context,"Please check network", Toast.LENGTH_LONG).show()
-            }
-        } else {
-            Toast.makeText(context,"Please check network", Toast.LENGTH_LONG).show()
-        }
-//            Snackbar.make(this, "Please check netwrok connectivity", Snackbar.LENGTH_SHORT).show()
-
-        Toast.makeText(context,"Please check network", Toast.LENGTH_LONG).show()
-    }
 
 
 

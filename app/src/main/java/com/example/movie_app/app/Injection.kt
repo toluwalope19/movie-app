@@ -1,13 +1,9 @@
 package com.example.movie_app.app
 
-import android.content.Context
-import android.net.ConnectivityManager
-import com.example.movie_app.repository.Repository
+
 import com.example.movie_app.repository.network.MovieApi
-import com.example.movie_app.repository.network.NetworkConnectionInterceptor
 import com.example.movie_app.util.Util
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

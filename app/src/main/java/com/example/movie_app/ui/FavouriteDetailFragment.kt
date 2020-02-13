@@ -35,8 +35,10 @@ class FavouriteDetailFragment : Fragment() {
         binding.movie = args.movie
         val requestOptions = RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL)
         val image =  args.movie.backdrop
-        Glide.with(context!!).load(Util.IMAGE_BASE_URL+"original"+ image)
-            .apply(requestOptions).into(binding.detailImage)
+        Glide.with(context!!)
+            .load(Util.IMAGE_BASE_URL+"original"+ image)
+            .apply(requestOptions)
+            .into(binding.detailImage)
 
         return binding.root
     }

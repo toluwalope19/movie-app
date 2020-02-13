@@ -32,14 +32,6 @@ class FavouriteRepository(application: Application) : CoroutineScope {
     fun deleteFavourite(movie: Movie) {
         launch { deleteFavouriteBackGround(movie) }
     }
-//
-//
-//    fun isFavorited(id: Long): Boolean?{
-//       return runBlocking {
-//            isFavorite(id)
-//        }
-//
-//    }
 
 
     private suspend fun insertFavouriteBackGround(movie: Movie) {
