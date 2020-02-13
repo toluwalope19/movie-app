@@ -2,15 +2,15 @@
 package com.example.movie_app.ui.adapters
 
 import android.app.Application
-import android.content.ContentResolver
 import android.content.Context
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
+import android.os.AsyncTask
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -26,11 +26,13 @@ import com.example.movie_app.repository.FavouriteRepository
 import com.example.movie_app.util.OnItemClickListener
 import com.example.movie_app.util.Util
 import com.example.movie_app.viewmodel.FavouritesViewModel
-import com.example.movie_app.viewmodel.MoviesViewModel
-import com.google.android.material.shape.RoundedCornerTreatment
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.io.FileOutputStream
+import java.io.InputStream
+import java.net.URL
+
 
 class MoviesAdapter(
     private val onItemClickListener: OnItemClickListener,
@@ -42,6 +44,7 @@ class MoviesAdapter(
     var movie: List<Movie> = listOf()
     val favMovies: List<FavouriteMovie> = listOf()
     lateinit var favouritesViewModel: FavouritesViewModel
+
 
 
     companion object DiffCallback: DiffUtil.ItemCallback<Movie>(){
@@ -158,5 +161,14 @@ class MoviesAdapter(
         }
 
     }
+
+
+
+
+
+
+
+
+
 
 }

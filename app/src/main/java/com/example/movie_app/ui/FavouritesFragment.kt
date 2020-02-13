@@ -53,10 +53,10 @@ class FavouritesFragment : Fragment() {
         viewModel.getMessages().observe(this,Observer<List<Movie>>{favMovies->
 
             if(favMovies.isEmpty()){
-                binding.errorMessage.setImageResource(R.drawable.poster)
+                binding.error.visibility = View.VISIBLE
                 adapter.notifyDataSetChanged()
             }else {
-                binding.errorMessage.visibility = View.GONE
+                binding.error.visibility = View.GONE
                 adapter.notifyDataSetChanged()
             }
             adapter.favMovies = favMovies

@@ -37,6 +37,10 @@ data class Movie (@PrimaryKey
           @ColumnInfo(name="overview")
         var overview: String,
 
+      @SerializedName("backdrop_path")
+      @ColumnInfo(name="backdrop")
+      var backdrop: String,
+
         @Transient
         @ColumnInfo(name = "favourite")
         var isFavourite: Boolean

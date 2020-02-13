@@ -38,7 +38,7 @@ class MovieDetailsFragment() : Fragment() {
          var movies: List<Movie> = listOf()
 
         binding.movie = args.movie
-        val image =  args.movie.thumbnail
+        val image =  args.movie.backdrop
         val status = args.movie.isFavourite
         val requestOptions = RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL)
         if(status){

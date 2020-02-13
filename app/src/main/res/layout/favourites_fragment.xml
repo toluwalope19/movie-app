@@ -21,14 +21,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-        <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="150dp"
-            android:id="@+id/errorMessage"
-            android:tint="@color/colorAccent"
+
+        <TextView
+            android:id="@+id/error"
+            android:layout_width="match_parent"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/error"/>
+            android:drawableBottom="@drawable/error"
+            android:gravity="center"
+            android:textSize="32sp"
+            android:textColor="@color/Text"
+            android:drawableTint="@color/colorAccent"
+            android:layout_height="150dp"
+            android:text="@string/favourites_list_is_empty"/>
 
     </LinearLayout>
 </layout>

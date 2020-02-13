@@ -15,7 +15,7 @@ public class FavouritesFragmentBindingImpl extends FavouritesFragmentBinding  {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
         sViewsWithIds.put(R.id.favourites_recycler, 1);
-        sViewsWithIds.put(R.id.errorMessage, 2);
+        sViewsWithIds.put(R.id.error, 2);
     }
     // views
     @NonNull
@@ -30,7 +30,7 @@ public class FavouritesFragmentBindingImpl extends FavouritesFragmentBinding  {
     }
     private FavouritesFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.ImageView) bindings[2]
+            , (android.widget.TextView) bindings[2]
             , (androidx.recyclerview.widget.RecyclerView) bindings[1]
             );
         this.mboundView0 = (android.widget.LinearLayout) bindings[0];

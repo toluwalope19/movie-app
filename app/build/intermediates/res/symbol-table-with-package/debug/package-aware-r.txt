@@ -1552,6 +1552,7 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id error
 id errorMessage
 id exitUntilCollapsed
 id expand_activities_button
@@ -1952,6 +1953,7 @@ string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string favImage
+string favourites_list_is_empty
 string genre
 string hide_bottom_view_on_scroll_behavior
 string i

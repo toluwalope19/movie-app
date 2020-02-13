@@ -31,7 +31,7 @@ public final class MovieDao_Impl implements MovieDao {
     this.__insertionAdapterOfMovie = new EntityInsertionAdapter<Movie>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `movieTable` (`id`,`title`,`thumbnail`,`rating`,`vote_average`,`overview`,`favourite`) VALUES (?,?,?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `movieTable` (`id`,`title`,`thumbnail`,`rating`,`vote_average`,`overview`,`backdrop`,`favourite`) VALUES (?,?,?,?,?,?,?,?)";
       }
 
       @Override
@@ -58,9 +58,14 @@ public final class MovieDao_Impl implements MovieDao {
         } else {
           stmt.bindString(6, value.getOverview());
         }
+        if (value.getBackdrop() == null) {
+          stmt.bindNull(7);
+        } else {
+          stmt.bindString(7, value.getBackdrop());
+        }
         final int _tmp;
         _tmp = value.isFavourite() ? 1 : 0;
-        stmt.bindLong(7, _tmp);
+        stmt.bindLong(8, _tmp);
       }
     };
     this.__deletionAdapterOfMovie = new EntityDeletionOrUpdateAdapter<Movie>(__db) {
@@ -115,6 +120,7 @@ public final class MovieDao_Impl implements MovieDao {
           final int _cursorIndexOfReleaseDate = CursorUtil.getColumnIndexOrThrow(_cursor, "rating");
           final int _cursorIndexOfVoteAverage = CursorUtil.getColumnIndexOrThrow(_cursor, "vote_average");
           final int _cursorIndexOfOverview = CursorUtil.getColumnIndexOrThrow(_cursor, "overview");
+          final int _cursorIndexOfBackdrop = CursorUtil.getColumnIndexOrThrow(_cursor, "backdrop");
           final int _cursorIndexOfIsFavourite = CursorUtil.getColumnIndexOrThrow(_cursor, "favourite");
           final List<Movie> _result = new ArrayList<Movie>(_cursor.getCount());
           while(_cursor.moveToNext()) {
@@ -131,11 +137,13 @@ public final class MovieDao_Impl implements MovieDao {
             _tmpVoteAverage = _cursor.getDouble(_cursorIndexOfVoteAverage);
             final String _tmpOverview;
             _tmpOverview = _cursor.getString(_cursorIndexOfOverview);
+            final String _tmpBackdrop;
+            _tmpBackdrop = _cursor.getString(_cursorIndexOfBackdrop);
             final boolean _tmpIsFavourite;
             final int _tmp;
             _tmp = _cursor.getInt(_cursorIndexOfIsFavourite);
             _tmpIsFavourite = _tmp != 0;
-            _item = new Movie(_tmpId,_tmpTitle,_tmpThumbnail,_tmpReleaseDate,_tmpVoteAverage,_tmpOverview,_tmpIsFavourite);
+            _item = new Movie(_tmpId,_tmpTitle,_tmpThumbnail,_tmpReleaseDate,_tmpVoteAverage,_tmpOverview,_tmpBackdrop,_tmpIsFavourite);
             _result.add(_item);
           }
           return _result;
@@ -166,6 +174,7 @@ public final class MovieDao_Impl implements MovieDao {
       final int _cursorIndexOfReleaseDate = CursorUtil.getColumnIndexOrThrow(_cursor, "rating");
       final int _cursorIndexOfVoteAverage = CursorUtil.getColumnIndexOrThrow(_cursor, "vote_average");
       final int _cursorIndexOfOverview = CursorUtil.getColumnIndexOrThrow(_cursor, "overview");
+      final int _cursorIndexOfBackdrop = CursorUtil.getColumnIndexOrThrow(_cursor, "backdrop");
       final int _cursorIndexOfIsFavourite = CursorUtil.getColumnIndexOrThrow(_cursor, "favourite");
       final List<Movie> _result = new ArrayList<Movie>(_cursor.getCount());
       while(_cursor.moveToNext()) {
@@ -182,11 +191,13 @@ public final class MovieDao_Impl implements MovieDao {
         _tmpVoteAverage = _cursor.getDouble(_cursorIndexOfVoteAverage);
         final String _tmpOverview;
         _tmpOverview = _cursor.getString(_cursorIndexOfOverview);
+        final String _tmpBackdrop;
+        _tmpBackdrop = _cursor.getString(_cursorIndexOfBackdrop);
         final boolean _tmpIsFavourite;
         final int _tmp;
         _tmp = _cursor.getInt(_cursorIndexOfIsFavourite);
         _tmpIsFavourite = _tmp != 0;
-        _item = new Movie(_tmpId,_tmpTitle,_tmpThumbnail,_tmpReleaseDate,_tmpVoteAverage,_tmpOverview,_tmpIsFavourite);
+        _item = new Movie(_tmpId,_tmpTitle,_tmpThumbnail,_tmpReleaseDate,_tmpVoteAverage,_tmpOverview,_tmpBackdrop,_tmpIsFavourite);
         _result.add(_item);
       }
       return _result;
