@@ -17,6 +17,15 @@
                             <option name="y" value="-49" />
                           </Point>
                         </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_favouriteDetailFragment_to_favouritesFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -83,12 +92,22 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="action_moviesFragment_to_favouriteDetailFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="action_moviesFragment_to_favouritesFragment">
                               <value>
                                 <LayoutPositions />
                               </value>
                             </entry>
                             <entry key="action_moviesFragment_to_movieDetailsFragment">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_moviesFragment_to_movieDetailsFragment2">
                               <value>
                                 <LayoutPositions />
                               </value>

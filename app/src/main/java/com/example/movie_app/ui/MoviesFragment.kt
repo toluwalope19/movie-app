@@ -1,6 +1,7 @@
 package com.example.movie_app.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +20,7 @@ import com.example.movie_app.ui.adapters.MoviesAdapter
 import com.example.movie_app.util.MarginItemDecoration
 import com.example.movie_app.util.OnItemClickListener
 import com.example.movie_app.viewmodel.FavouritesViewModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.runBlocking
 
 
@@ -38,7 +40,7 @@ class MoviesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = MoviesFragmentBinding.inflate(inflater, container, false)
-            factory = FavoriteRepositoryViewModelFactory(activity!!.application)
+            factory = FavoriteRepositoryViewModelFactory(activity!!.application )
          viewModel = ViewModelProvider(this, factory).get(MoviesViewModel::class.java)
 
 
@@ -60,7 +62,12 @@ class MoviesFragment : Fragment() {
 
             runBlocking {
                 adapter.movie = viewModel.mapFavorite(movies)
-
+                Log.d("Ayor", movies.toString())
+                }
+            if(movies.isEmpty()){
+                binding.progressBar.visibility = View.GONE
+                binding.errorMessage.visibility = View.VISIBLE
+                Snackbar.make(view!!,"Something went wrong", Snackbar.LENGTH_LONG).show()
             }
 
 
