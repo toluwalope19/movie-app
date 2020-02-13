@@ -41,6 +41,12 @@ anim nav_default_enter_anim
 anim nav_default_exit_anim
 anim nav_default_pop_enter_anim
 anim nav_default_pop_exit_anim
+anim slide_down
+anim slide_in_left
+anim slide_in_right
+anim slide_out_left
+anim slide_out_right
+anim slide_up
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -1480,6 +1486,7 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
+id action_favouriteDetailFragment_to_favouritesFragment
 id action_favouritesFragment_to_favouriteDetailFragment
 id action_favouritesFragment_to_movieDetailsFragment
 id action_favouritesFragment_to_moviesFragment
@@ -1490,8 +1497,10 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_movieDetailsFragment_to_moviesFragment
+id action_moviesFragment_to_favouriteDetailFragment
 id action_moviesFragment_to_favouritesFragment
 id action_moviesFragment_to_movieDetailsFragment
+id action_moviesFragment_to_movieDetailsFragment2
 id action_text
 id actions
 id activity_chooser_view_content

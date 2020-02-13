@@ -22,13 +22,11 @@ object Injection {
 
 
 
-       private val httpClient = OkHttpClient()
+    private val httpClient = OkHttpClient()
 
 
     fun provideMovieApi(): MovieApi {
         return provideRetrofit().create(MovieApi::class.java)
     }
-
-
 
 }

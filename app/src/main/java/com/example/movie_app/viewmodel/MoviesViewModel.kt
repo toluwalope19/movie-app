@@ -1,17 +1,14 @@
 package com.example.movie_app.viewmodel
 
 import android.app.Application
-import android.content.Context
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.movie_app.MainActivity
 import com.example.movie_app.model.Movie
 import com.example.movie_app.repository.FavouriteRepository
 import com.example.movie_app.repository.Repository
 import com.example.movie_app.util.NoInternetExceptions
-import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.*
 
 
@@ -46,6 +43,7 @@ class MoviesViewModel(val application: Application) : ViewModel() {
                 _allMovies.value = repository.getMovies()
 //                Log.i("Hello", repository.getMovies().toString())
             } catch (e: NoInternetExceptions) {
+
             }
         }
     }

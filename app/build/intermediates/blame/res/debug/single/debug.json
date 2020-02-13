@@ -796,6 +796,10 @@
         "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\61d529a8c71b1df6adcd5b10dbc1aacc\\appcompat-1.1.0\\res\\drawable-mdpi-v4\\abc_scrubber_control_to_pressed_mtrl_005.png"
     },
     {
+        "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_in_right.xml.flat",
+        "source": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\src\\main\\res\\anim\\slide_in_right.xml"
+    },
+    {
         "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\61d529a8c71b1df6adcd5b10dbc1aacc\\appcompat-1.1.0\\res\\drawable-xhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
@@ -942,6 +946,10 @@
     {
         "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\layout-v21_notification_template_custom_big.xml.flat",
         "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\722fc2722e7f4020db2ee0c502276751\\core-1.1.0\\res\\layout-v21\\notification_template_custom_big.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_out_right.xml.flat",
+        "source": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\src\\main\\res\\anim\\slide_out_right.xml"
     },
     {
         "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_design_ic_visibility_off.png.flat",
@@ -1274,6 +1282,10 @@
     {
         "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_out_left.xml.flat",
+        "source": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\src\\main\\res\\anim\\slide_out_left.xml"
     },
     {
         "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_card_view_foreground.xml.flat",
@@ -2104,6 +2116,10 @@
         "source": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\src\\main\\res\\drawable-v24\\ic_launcher_background.xml"
     },
     {
+        "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_down.xml.flat",
+        "source": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\src\\main\\res\\anim\\slide_down.xml"
+    },
+    {
         "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_seek_thumb.xml.flat",
         "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\61d529a8c71b1df6adcd5b10dbc1aacc\\appcompat-1.1.0\\res\\color-v23\\abc_tint_seek_thumb.xml"
     },
@@ -2420,6 +2436,10 @@
         "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\61d529a8c71b1df6adcd5b10dbc1aacc\\appcompat-1.1.0\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
     },
     {
+        "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_up.xml.flat",
+        "source": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\src\\main\\res\\anim\\slide_up.xml"
+    },
+    {
         "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_hint_foreground_material_light.xml.flat",
         "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\61d529a8c71b1df6adcd5b10dbc1aacc\\appcompat-1.1.0\\res\\color\\abc_hint_foreground_material_light.xml"
     },
@@ -2438,6 +2458,10 @@
     {
         "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_navigation_item_background_color.xml.flat",
         "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\7d11090a10a5d3f58ca5aa85a172ef20\\material-1.1.0\\res\\color\\mtrl_navigation_item_background_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_in_left.xml.flat",
+        "source": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\src\\main\\res\\anim\\slide_in_left.xml"
     },
     {
         "merged": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_btn_text_color_selector.xml.flat",

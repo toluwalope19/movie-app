@@ -23,6 +23,7 @@ import com.example.movie_app.databinding.TopRatedBinding
 import com.example.movie_app.model.FavouriteMovie
 import com.example.movie_app.model.Movie
 import com.example.movie_app.repository.FavouriteRepository
+import com.example.movie_app.ui.MoviesFragment
 import com.example.movie_app.util.OnItemClickListener
 import com.example.movie_app.util.Util
 import com.example.movie_app.viewmodel.FavouritesViewModel
@@ -41,7 +42,7 @@ class MoviesAdapter(
     val application: Application
 ) : ListAdapter<Movie,MoviesAdapter.MovieHolder>(DiffCallback) {
 
-    var movie: List<Movie> = listOf()
+    var movie: List<Movie> = arrayListOf()
 
 
     companion object DiffCallback: DiffUtil.ItemCallback<Movie>(){
@@ -64,12 +65,13 @@ class MoviesAdapter(
     }
 
     override fun getItemCount(): Int {
-        return movie.size
+
+            return movie!!.size
     }
 
     override fun onBindViewHolder(holder: MovieHolder, position: Int) {
 
-        val movie = movie.get(position)
+        val movie = movie!!.get(position)
 
         holder.bind(movie, onItemClickListener)
         val imageString =Util.IMAGE_BASE_URL + "original" + movie.thumbnail
