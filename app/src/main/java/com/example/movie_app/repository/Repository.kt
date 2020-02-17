@@ -24,7 +24,6 @@ object Repository {
                     Log.d("Ayodele", data.toString())
                 } catch (t: Throwable) {
                     Log.e("Repository", t.message!!)
-
                 }
             }
             return data

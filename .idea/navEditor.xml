@@ -71,7 +71,12 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_movieDetailsFragment_to_moviesFragment">
+                            <entry key="action_movieDetailsFragment_to_moviesFragment2">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_movieDetailsFragment_to_moviesFragment3">
                               <value>
                                 <LayoutPositions />
                               </value>

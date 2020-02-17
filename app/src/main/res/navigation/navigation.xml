@@ -34,12 +34,19 @@
         android:name="com.example.movie_app.ui.MovieDetailsFragment"
         android:label="Movie Details"
         tools:layout="@layout/movie_details_fragment" >
-        <action
-            android:id="@+id/action_movieDetailsFragment_to_moviesFragment"
-            app:destination="@id/moviesFragment" />
         <argument
             android:name="movie"
             app:argType="com.example.movie_app.model.Movie" />
+        <action
+            android:id="@+id/action_movieDetailsFragment_to_moviesFragment2"
+            app:destination="@id/moviesFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_in_right" />
+        <action
+            android:id="@+id/action_movieDetailsFragment_to_moviesFragment3"
+            app:destination="@id/moviesFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/slide_down" />
     </fragment>
     <fragment
         android:id="@+id/favouritesFragment"

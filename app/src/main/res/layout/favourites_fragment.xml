@@ -29,6 +29,7 @@
             android:drawableBottom="@drawable/error"
             android:gravity="center"
             android:textSize="32sp"
+            android:padding="8dp"
             android:textColor="@color/Text"
             android:drawableTint="@color/colorAccent"
             android:layout_height="150dp"

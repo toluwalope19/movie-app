@@ -1,7 +1,10 @@
-#Thu Feb 13 16:39:48 WAT 2020
-base.0=C\:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+#Mon Feb 17 20:05:09 WAT 2020
+path.2=classes2.dex
 path.1=classes.dex
-renamed.1=classes2.dex
 path.0=classes.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
 renamed.0=classes.dex
+base.2=C\:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes2.dex
 base.1=C\:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.0=C\:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex

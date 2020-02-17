@@ -13,7 +13,7 @@ import com.example.movie_app.util.DbTypeConverters
 @TypeConverters(DbTypeConverters::class)
 abstract class MovieDB :RoomDatabase(){
 
-    abstract fun MovieDao(): MovieDao
+    abstract fun movieDao(): MovieDao
 
     companion object{
 

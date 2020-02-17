@@ -130,7 +130,7 @@ public final class MovieDB_Impl extends MovieDB {
   }
 
   @Override
-  public MovieDao MovieDao() {
+  public MovieDao movieDao() {
     if (_movieDao != null) {
       return _movieDao;
     } else {

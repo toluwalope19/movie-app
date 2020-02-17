@@ -2,21 +2,23 @@ package com.example.movie_app.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import com.example.movie_app.model.FavouriteMovie
 import com.example.movie_app.model.Movie
 import com.example.movie_app.repository.FavouriteRepository
-import com.example.movie_app.repository.Repository
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 
 class FavouritesViewModel(application: Application) : AndroidViewModel(application) {
 
     private var repository = FavouriteRepository(application)
 
 
+    private val viewModelJob = Job()
 
-      fun getMessages() = repository.getFavouriteMessages()
+    private val viewModelScope = CoroutineScope(viewModelJob + Dispatchers.Main)
+
+
+      fun getMessages()   = repository.getFavouriteMovies()
 
        fun addFavourites(movie: Movie) {repository.insertFavourite(movie)}
 

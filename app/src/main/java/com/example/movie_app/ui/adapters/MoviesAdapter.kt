@@ -116,7 +116,7 @@ class MoviesAdapter(
 
             binding.movie = item
             val repo = FavouriteRepository(application)
-            Log.i("Idris", item.isFavourite.toString())
+            Log.i("Tolu", item.isFavourite.toString())
 
             if (item.isFavourite) {
                 binding.unlike.visibility = View.VISIBLE

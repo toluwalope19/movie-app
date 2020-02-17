@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\Ayodele\\AndroidStudioProjects\\MovieApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-nl\\values-nl.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\722fc2722e7f4020db2ee0c502276751\\core-1.1.0\\res\\values-nl\\values-nl.xml",
+                    "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\d9900d6ea78d003b12d2a556064b4e7e\\core-1.2.0\\res\\values-nl\\values-nl.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\b71e43bd72e9795df4085b87626197a8\\jetified-navigation-ui-2.2.0\\res\\values-nl\\values-nl.xml",
+                    "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\569e1b6d42ca17e97ca6ce2256419d29\\navigation-ui-2.2.1\\res\\values-nl\\values-nl.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

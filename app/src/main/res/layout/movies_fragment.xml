@@ -32,6 +32,8 @@
        android:text="@string/top_rated"
        android:textSize="24sp" />
 
+
+
    <androidx.recyclerview.widget.RecyclerView
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
@@ -52,6 +54,15 @@
        android:tint="@color/colorAccent"
        android:layout_gravity="center_horizontal"
        android:src="@drawable/cloud_error"/>
+
+   <Button
+       android:id="@+id/Refresh"
+       android:layout_width="150dp"
+       android:layout_height="50dp"
+       android:visibility="gone"
+       android:layout_gravity="center"
+       android:backgroundTint="@color/colorAccent"
+       android:text="@string/refresh"/>
 
   </LinearLayout>
 

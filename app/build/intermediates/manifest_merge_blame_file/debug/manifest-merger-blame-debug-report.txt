@@ -26,7 +26,7 @@
 17        android:allowBackup="true"
 17-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:8:9-35
 18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-18-->[androidx.core:core:1.1.0] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\722fc2722e7f4020db2ee0c502276751\core-1.1.0\AndroidManifest.xml:24:18-86
+18-->[androidx.core:core:1.2.0] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\d9900d6ea78d003b12d2a556064b4e7e\core-1.2.0\AndroidManifest.xml:24:18-86
 19        android:debuggable="true"
 20        android:icon="@mipmap/ic_launcher"
 20-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:9:9-43

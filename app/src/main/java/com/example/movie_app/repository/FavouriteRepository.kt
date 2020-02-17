@@ -20,10 +20,10 @@ class FavouriteRepository(application: Application) : CoroutineScope {
 
     init {
         val db = MovieDB.getDatabase(application)
-        movieDao = db.MovieDao()
+        movieDao = db.movieDao()
     }
 
-    fun getFavouriteMessages() = movieDao.getFavourites()
+    fun getFavouriteMovies() = movieDao.getFavourites()
 
     fun insertFavourite(movie: Movie) {
         launch { insertFavouriteBackGround(movie) }

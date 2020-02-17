@@ -14,20 +14,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\722fc2722e7f4020db2ee0c502276751\\core-1.1.0\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "source": "C:\\Users\\Ayodele\\.gradle\\caches\\transforms-2\\files-2.1\\d9900d6ea78d003b12d2a556064b4e7e\\core-1.2.0\\res\\values-en-rXC\\values-en-rXC.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
                         "startOffsets": "55",
-                        "endColumns": "202",
-                        "endOffsets": "253"
+                        "endColumns": "203",
+                        "endOffsets": "254"
                     },
                     "to": {
                         "startLines": "30",
                         "startColumns": "4",
                         "startOffsets": "5682",
-                        "endColumns": "202",
-                        "endOffsets": "5880"
+                        "endColumns": "203",
+                        "endOffsets": "5881"
                     }
                 }
             ]

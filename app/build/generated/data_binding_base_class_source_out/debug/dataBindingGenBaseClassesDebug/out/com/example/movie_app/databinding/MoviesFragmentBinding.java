@@ -4,6 +4,7 @@ package com.example.movie_app.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
@@ -20,6 +21,9 @@ import java.lang.Object;
 
 public abstract class MoviesFragmentBinding extends ViewDataBinding {
   @NonNull
+  public final Button Refresh;
+
+  @NonNull
   public final ImageView errorMessage;
 
   @NonNull
@@ -35,9 +39,10 @@ public abstract class MoviesFragmentBinding extends ViewDataBinding {
   protected Movie mMovies;
 
   protected MoviesFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ImageView errorMessage, FloatingActionButton fab, ProgressBar progressBar,
+      Button Refresh, ImageView errorMessage, FloatingActionButton fab, ProgressBar progressBar,
       RecyclerView topRatedRecyclerView) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.Refresh = Refresh;
     this.errorMessage = errorMessage;
     this.fab = fab;
     this.progressBar = progressBar;

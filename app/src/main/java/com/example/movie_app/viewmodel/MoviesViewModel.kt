@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.amitshekhar.DebugDB
 import com.example.movie_app.model.Movie
 import com.example.movie_app.repository.FavouriteRepository
 import com.example.movie_app.repository.Repository
@@ -29,17 +30,22 @@ class MoviesViewModel(val application: Application) : ViewModel() {
 
 
 
+    val fireViewModelAllMovies = MutableLiveData<Boolean>(false)
     private var _allMovies = MutableLiveData<List<Movie>>()
     val allMovies
         get() = _allMovies
+
+
 
 
     /**
      * init{} is called immediately when this ViewModel is created.
      */
     init {
+
         viewModelScope.launch {
             try {
+                fireViewModelAllMovies.value = true
                 _allMovies.value = repository.getMovies()
 //                Log.i("Hello", repository.getMovies().toString())
             } catch (e: NoInternetExceptions) {
@@ -48,15 +54,15 @@ class MoviesViewModel(val application: Application) : ViewModel() {
         }
     }
 
-    suspend fun mapFavorite(movies: List<Movie>): List<Movie> {
+    suspend fun mapFavorite(movies: List<Movie>):List<Movie>{
 
-          val g =  movies.map { movie ->
+          val newList =  movies.map { movie ->
                 movie.isFavourite = favRepo.isFavorite(movie.id)
                 movie
             }
 
-        Log.i("Help", g.toString())
-        return g
+        Log.i("Help", newList.toString())
+        return newList
 
     }
 

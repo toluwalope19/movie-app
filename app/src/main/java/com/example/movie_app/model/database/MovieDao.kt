@@ -9,7 +9,7 @@ import com.example.movie_app.model.Movie
 interface MovieDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertFavourite(movie: Movie)
+    suspend fun insertFavourite(movie: Movie)
 
     @Query("SELECT * from movieTable ORDER BY id ASC")
     fun getFavourites() : LiveData<List<Movie>>
@@ -18,5 +18,5 @@ interface MovieDao {
     fun isFavorite(id: Long) : List<Movie>
 
     @Delete
-    fun removeFavourite(movie: Movie)
+    suspend fun removeFavourite(movie: Movie)
 }
