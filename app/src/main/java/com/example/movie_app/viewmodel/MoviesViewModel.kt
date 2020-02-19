@@ -20,6 +20,11 @@ class MoviesViewModel(val application: Application) : ViewModel() {
         FavouriteRepository(application)
     }
 
+    private val _forceUpdate = MutableLiveData<Boolean>(false)
+
+    private val _dataLoading = MutableLiveData<Boolean>()
+    val dataLoading: LiveData<Boolean> = _dataLoading
+
     private val _isFavorite = MutableLiveData<List<Movie>>()
     val isFavorite: LiveData<List<Movie>>
         get() = _isFavorite

@@ -1,20 +1,16 @@
 package com.example.movie_app.ui
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.movie_app.R
 import com.example.movie_app.databinding.FavouritesFragmentBinding
-import com.example.movie_app.databinding.FavouritesTabBinding
-import com.example.movie_app.model.FavouriteMovie
 import com.example.movie_app.model.Movie
 import com.example.movie_app.ui.adapters.FavouriteAdapter
 import com.example.movie_app.util.MarginItemDecoration
@@ -50,7 +46,7 @@ class FavouritesFragment : Fragment() {
         binding.favouritesRecycler.layoutManager = GridLayoutManager(context,2)
         binding.favouritesRecycler.addItemDecoration(MarginItemDecoration(resources.getDimension(R.dimen.marginTop).toInt()))
 
-        viewModel.getMessages().observe(this,Observer<List<Movie>>{favMovies->
+        viewModel.getMovies().observe(this,Observer<List<Movie>>{ favMovies->
 
             if(favMovies.isEmpty()){
                 binding.error.visibility = View.VISIBLE

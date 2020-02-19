@@ -36,52 +36,51 @@
 22-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:11:9-54
 23        android:supportsRtl="true"
 23-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:12:9-35
-24        android:testOnly="true"
-25        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
-25-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:13:9-65
-26        <activity android:name="com.example.movie_app.MainActivity" >
-26-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:14:9-20:20
-26-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:14:19-47
-27            <intent-filter>
-27-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:15:13-19:29
-28                <action android:name="android.intent.action.MAIN" />
-28-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:16:17-69
-28-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:16:25-66
-29
-30                <category android:name="android.intent.category.LAUNCHER" />
-30-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:18:17-77
-30-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:18:27-74
-31            </intent-filter>
-32        </activity>
-33
-34        <provider
-34-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\5b1b65239e77629891320521d0af29cc\debug-db-1.0.6\AndroidManifest.xml:12:9-16:40
-35            android:name="com.amitshekhar.debug.DebugDBInitProvider"
-35-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\5b1b65239e77629891320521d0af29cc\debug-db-1.0.6\AndroidManifest.xml:13:13-69
-36            android:authorities="com.example.movie_app.DebugDBInitProvider"
-36-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\5b1b65239e77629891320521d0af29cc\debug-db-1.0.6\AndroidManifest.xml:14:13-71
-37            android:enabled="true"
-37-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\5b1b65239e77629891320521d0af29cc\debug-db-1.0.6\AndroidManifest.xml:15:13-35
-38            android:exported="false" />
-38-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\5b1b65239e77629891320521d0af29cc\debug-db-1.0.6\AndroidManifest.xml:16:13-37
-39
-40        <service
-40-->[androidx.room:room-runtime:2.2.3] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\0c622dac15aa5a91d76e2c7f9e0b9df9\room-runtime-2.2.3\AndroidManifest.xml:25:9-27:40
-41            android:name="androidx.room.MultiInstanceInvalidationService"
-41-->[androidx.room:room-runtime:2.2.3] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\0c622dac15aa5a91d76e2c7f9e0b9df9\room-runtime-2.2.3\AndroidManifest.xml:26:13-74
-42            android:exported="false" />
-42-->[androidx.room:room-runtime:2.2.3] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\0c622dac15aa5a91d76e2c7f9e0b9df9\room-runtime-2.2.3\AndroidManifest.xml:27:13-37
-43
-44        <provider
-44-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\b74b161c518caa950da1de81b1e37584\lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
-45            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-45-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\b74b161c518caa950da1de81b1e37584\lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
-46            android:authorities="com.example.movie_app.lifecycle-process"
-46-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\b74b161c518caa950da1de81b1e37584\lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
-47            android:exported="false"
-47-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\b74b161c518caa950da1de81b1e37584\lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
-48            android:multiprocess="true" />
-48-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\b74b161c518caa950da1de81b1e37584\lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
-49    </application>
-50
-51</manifest>
+24        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+24-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:13:9-65
+25        <activity android:name="com.example.movie_app.MainActivity" >
+25-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:14:9-20:20
+25-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:14:19-47
+26            <intent-filter>
+26-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:15:13-19:29
+27                <action android:name="android.intent.action.MAIN" />
+27-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:16:17-69
+27-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:16:25-66
+28
+29                <category android:name="android.intent.category.LAUNCHER" />
+29-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:18:17-77
+29-->C:\Users\Ayodele\AndroidStudioProjects\MovieApp\app\src\main\AndroidManifest.xml:18:27-74
+30            </intent-filter>
+31        </activity>
+32
+33        <provider
+33-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\5b1b65239e77629891320521d0af29cc\debug-db-1.0.6\AndroidManifest.xml:12:9-16:40
+34            android:name="com.amitshekhar.debug.DebugDBInitProvider"
+34-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\5b1b65239e77629891320521d0af29cc\debug-db-1.0.6\AndroidManifest.xml:13:13-69
+35            android:authorities="com.example.movie_app.DebugDBInitProvider"
+35-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\5b1b65239e77629891320521d0af29cc\debug-db-1.0.6\AndroidManifest.xml:14:13-71
+36            android:enabled="true"
+36-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\5b1b65239e77629891320521d0af29cc\debug-db-1.0.6\AndroidManifest.xml:15:13-35
+37            android:exported="false" />
+37-->[com.amitshekhar.android:debug-db:1.0.6] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\5b1b65239e77629891320521d0af29cc\debug-db-1.0.6\AndroidManifest.xml:16:13-37
+38
+39        <service
+39-->[androidx.room:room-runtime:2.2.3] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\0c622dac15aa5a91d76e2c7f9e0b9df9\room-runtime-2.2.3\AndroidManifest.xml:25:9-27:40
+40            android:name="androidx.room.MultiInstanceInvalidationService"
+40-->[androidx.room:room-runtime:2.2.3] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\0c622dac15aa5a91d76e2c7f9e0b9df9\room-runtime-2.2.3\AndroidManifest.xml:26:13-74
+41            android:exported="false" />
+41-->[androidx.room:room-runtime:2.2.3] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\0c622dac15aa5a91d76e2c7f9e0b9df9\room-runtime-2.2.3\AndroidManifest.xml:27:13-37
+42
+43        <provider
+43-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\b74b161c518caa950da1de81b1e37584\lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+44            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+44-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\b74b161c518caa950da1de81b1e37584\lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+45            android:authorities="com.example.movie_app.lifecycle-process"
+45-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\b74b161c518caa950da1de81b1e37584\lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+46            android:exported="false"
+46-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\b74b161c518caa950da1de81b1e37584\lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+47            android:multiprocess="true" />
+47-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Ayodele\.gradle\caches\transforms-2\files-2.1\b74b161c518caa950da1de81b1e37584\lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+48    </application>
+49
+50</manifest>

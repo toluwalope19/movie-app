@@ -34,8 +34,6 @@ class MoviesViewModelTest {
         value.observeForever {
             assertThat(it, CoreMatchers.not(Matchers.nullValue()))
         }
-
-
     }
 
     @Test

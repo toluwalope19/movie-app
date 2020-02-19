@@ -48,7 +48,7 @@ class FavouriteRepository(application: Application) : CoroutineScope {
 
     suspend fun isFavorite(id: Long): Boolean {
         return withContext(Dispatchers.IO) {
-            Log.i("Toly", movieDao.isFavorite(id).toString())
+           // Log.i("Toly", movieDao.isFavorite(id).toString())
             movieDao.isFavorite(id).isNotEmpty()
 
         }

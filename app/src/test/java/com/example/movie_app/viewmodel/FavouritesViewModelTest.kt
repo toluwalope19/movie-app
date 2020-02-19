@@ -1,62 +1,49 @@
 package com.example.movie_app.viewmodel
 
-import android.app.Application
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.test.core.app.ApplicationProvider
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.movie_app.model.Movie
-import org.junit.After
+import com.example.movie_app.repository.FavouriteRepository
+import com.example.movie_app.util.getOrAwaitValue
+import org.hamcrest.CoreMatchers
+import org.hamcrest.MatcherAssert.assertThat
+import org.hamcrest.Matchers
 import org.junit.Before
-import org.junit.Test
-
-import org.junit.Assert.*
 import org.junit.Rule
-import org.junit.rules.TestRule
-import org.mockito.Mock
-import org.mockito.Mockito.`when`
-import org.mockito.MockitoAnnotations
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.annotation.Config
 
+@RunWith(AndroidJUnit4::class)
+@Config(sdk = [Config.OLDEST_SDK], manifest = Config.NONE)
 class FavouritesViewModelTest {
 
-    private lateinit var favouritesViewModel: FavouritesViewModel
-
     @get:Rule
-    var rule : TestRule = InstantTaskExecutorRule()
-
-    @Mock
-    lateinit var mockGenerator : Movie
+    var instantExecutor = InstantTaskExecutorRule()
+    private lateinit var viewModel : FavouritesViewModel
+    private lateinit var repository: FavouriteRepository
 
     @Before
     fun setUp() {
-        MockitoAnnotations.initMocks(this)
-//        favouritesViewModel = FavouritesViewModel(ApplicationProvider.)
-    }
-
-    @After
-    fun tearDown() {
+        viewModel = FavouritesViewModel(ApplicationProvider.getApplicationContext())
+        repository = FavouriteRepository(ApplicationProvider.getApplicationContext())
+        val movie = Movie(419704,"Ad Astra","/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg","2019-09-17",6.0,"The near future","/5BwqwxMEjeFtdknRV792Svo0K1v.jpg",false)
+        viewModel.addFavourites(movie)
     }
 
     @Test
-    fun getMessages() {
-
+    fun getMovies() {
     }
 
     @Test
     fun addFavourites() {
-        val movies = Movie(419709,
-            "Ad Astra",
-            "/xBHvZcjRiWyobQ9kxBhO6B2dtRI.jpg",
-            "2019-09-17",6.0,
-            "The near future, a time when both hope and hardships drive humanity to look to the stars and beyond. " +
-                    "While a mysterious phenomenon menaces to destroy life on planet Earth, " +
-                    "astronaut Roy McBride undertakes a mission across the immensity of space " +
-                    "and its many perils to uncover the truth about " +
-                    "a lost expedition that decades before boldly faced emptiness and silence in search of the unknown.",
-            "/5BwqwxMEjeFtdknRV792Svo0K1v.jpg",false)
 
-        `when`(mockGenerator.copy()).thenReturn(movies)
+        val result = viewModel.getMovies().getOrAwaitValue()
+        assertThat(result, CoreMatchers.not(Matchers.nullValue()))
 
-           favouritesViewModel.addFavourites(movies)
 
-        assertEquals(movies,favouritesViewModel.addFavourites(movies))
+
     }
 
     @Test

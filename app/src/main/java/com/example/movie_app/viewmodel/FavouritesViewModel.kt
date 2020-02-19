@@ -18,7 +18,7 @@ class FavouritesViewModel(application: Application) : AndroidViewModel(applicati
     private val viewModelScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
 
-      fun getMessages()   = repository.getFavouriteMovies()
+      fun getMovies()   = repository.getFavouriteMovies()
 
        fun addFavourites(movie: Movie) {repository.insertFavourite(movie)}
 
