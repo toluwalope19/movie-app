@@ -41,12 +41,6 @@ class FavouritesViewModelTest {
 
         val result = viewModel.getMovies().getOrAwaitValue()
         assertThat(result, CoreMatchers.not(Matchers.nullValue()))
-
-
-
     }
 
-    @Test
-    fun removeFavourite() {
-    }
 }
