@@ -5,16 +5,15 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.amitshekhar.DebugDB
 import com.example.movie_app.model.Movie
 import com.example.movie_app.repository.FavouriteRepository
-import com.example.movie_app.repository.Repository
+import com.example.movie_app.repository.NetworkRepository
 import com.example.movie_app.util.NoInternetExceptions
 import kotlinx.coroutines.*
 
 
 class MoviesViewModel(val application: Application) : ViewModel() {
-    private val repository = Repository
+    private val repository = NetworkRepository
 
     private val favRepo by lazy {
         FavouriteRepository(application)

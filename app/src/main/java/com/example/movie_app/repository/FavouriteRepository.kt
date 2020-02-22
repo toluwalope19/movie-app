@@ -5,8 +5,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.movie_app.model.FavouriteMovie
 import com.example.movie_app.model.Movie
-import com.example.movie_app.model.database.MovieDB
-import com.example.movie_app.model.database.MovieDao
+import com.example.movie_app.database.MovieDB
+import com.example.movie_app.database.MovieDao
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 

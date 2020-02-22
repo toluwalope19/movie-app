@@ -1,6 +1,5 @@
 package com.example.movie_app.ui
 
-import android.app.Application
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -18,7 +17,7 @@ import com.example.movie_app.viewmodel.MoviesViewModel
 import com.example.movie_app.R
 import com.example.movie_app.databinding.MoviesFragmentBinding
 import com.example.movie_app.model.Movie
-import com.example.movie_app.repository.FavoriteRepositoryViewModelFactory
+import com.example.movie_app.viewmodel.MovieViewModelFactory
 import com.example.movie_app.ui.adapters.MoviesAdapter
 import com.example.movie_app.util.MarginItemDecoration
 import com.example.movie_app.util.OnItemClickListener
@@ -34,7 +33,7 @@ class MoviesFragment : Fragment() {
     }
 
     lateinit var viewModel: MoviesViewModel
-    lateinit var factory: FavoriteRepositoryViewModelFactory
+    lateinit var factory: MovieViewModelFactory
     lateinit var adapter: MoviesAdapter
     lateinit var favModel: FavouritesViewModel
     lateinit var swipeRefreshLayout: SwipeRefreshLayout
@@ -46,7 +45,10 @@ class MoviesFragment : Fragment() {
     ): View? {
         val binding = MoviesFragmentBinding.inflate(inflater, container, false)
 
-        factory = FavoriteRepositoryViewModelFactory(activity!!.application)
+        factory =
+            MovieViewModelFactory(
+                activity!!.application
+            )
 
         viewModel = ViewModelProvider(this, factory).get(MoviesViewModel::class.java)
 
